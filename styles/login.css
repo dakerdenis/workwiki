@@ -76,10 +76,41 @@ body {
     background-color: #fff;
 }
 .login__form__element {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 .form__element_desc {
+    width: 40%;
 }
 .form__element_input {
+    width: 60%;
+    border: 1px solid #0c1c35;
+    padding: 5px;
+    border-radius: 2px;
+}
+.form__element_input input {
+    width: 100%;
 }
 .login__from_button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.login__from_button button {
+    font-family: "Noto Sans", sans-serif;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #0c1c35;
+    color: #0c1c35;
+    font-size: 18px;
+    padding: 4px 25px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+.login__from_button button:hover{
+    background-color: #0c1c35;
+    color:#fff;
 }

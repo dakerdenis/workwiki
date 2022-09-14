@@ -7,11 +7,11 @@
 
                 <div class="infoblock__category_wrapper">
                     <?php
-                    
+
                     $query = "SELECT * FROM category";
                     $select_category = mysqli_query($connection, $query);
 
-
+                    
 
                     while ($row = mysqli_fetch_assoc($select_category)) {
                         $id = $row['id'];

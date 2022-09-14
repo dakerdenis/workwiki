@@ -31,19 +31,19 @@ session_start();
                 <div class="login__form__element">
                     <div class="form__element_desc">Login</div>
                     <div class="form__element_input">
-                        <input type="text">
+                        <input name="username" id="username" type="text">
                     </div>
                 </div>
                 <!----->
                 <div class="login__form__element">
                     <div class="form__element_desc">Password</div>
                     <div class="form__element_input">
-                        <input type="password">
+                        <input name="password" id="password" type="password">
                     </div>
                 </div>
                 <!----->
                 <div class="login__from_button">
-                    <button type="submit">login</button>
+                    <button type="submit" name="submit">login</button>
                 </div>
             </form>
         </div>
