@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Noto Sans", sans-serif;
+}
+
+/**********navigation styles*********************/
+/**********navigation styles*********************/
+/**********navigation styles*********************/
+.navigation__wiki_wrapper {
+    width: 100%;
+    position: sticky;
+    background-color: #9b9898;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.navigation__container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation__container_logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0c1c35;
+}
+.navigation__container__login {
+    display: flex;
+    align-items: center;
+
+}
+.navigation__container_username {
+
+}
+.navigation__container_logout {
+    margin-left: 25px;
+}
+.navigation__container_logout a {
+    color: #0c1c35;
+    text-decoration: none   ;
+}
+/**********navigation styles*********************/
+/**********navigation styles*********************/
+/**********navigation styles*********************/
