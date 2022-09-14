@@ -1,7 +1,22 @@
 <?php include './include/header.php'; ?>
 <?php include './db/connection.php'; ?>
+<?php
+        session_start();
 
+
+        
+?>
 <body>
+
+<?php
+
+if (isset($_SESSION['username'])) {
+    //////
+} else {
+    header("Location: ./login.php");
+}
+
+?>
     <?php include './include/navigation.php' ?>
     <div class="wiki__wrapper">
         <div class="wiki_infoblock">
@@ -9,7 +24,7 @@
                 A-Group Wiki
             </div>
             <div class="wiki_infoblock_content">
-
+            
                 <div class="infoblock__category_wrapper">
                     <?php
 
