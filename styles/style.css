@@ -86,3 +86,35 @@ body {
 /**********navigation styles*********************/
 /**********navigation styles*********************/
 /**********navigation styles*********************/
+
+
+/***************main category page*********************/
+.wiki__wrapper {
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.wiki_infoblock {
+    width: 100%;
+}
+.wiki__infoblock_test {
+    font-size: 25px;
+    font-weight: 500;
+    color: #0c1c35;
+}
+.wiki_infoblock_content {
+    margin-top: 25px;
+    width: 100%;
+}
+.infoblock__category_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.infoblock__category_wrapper a {
+    font-weight: 500;
+    font-size: 22px;
+    color: #0c1c35;
+    text-decoration: none;
+}
