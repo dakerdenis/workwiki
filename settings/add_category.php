@@ -31,13 +31,17 @@ include '../db/connection.php';
             <div class="add_category_form_block">
                 <p>Название подкатегорий</p>
                 <div class="add_category_form_input">
-                <input type="text">
+                    <input type="text">
                 </div>
             </div>
             <div class="add_category_form_block">
                 <button type="submit">Добавить категорию</button>
             </div>
         </form>
+    </div>
+
+    <div class="category__list">
+        <div class="category__list_desc">Список всех имеющихся категорий:</div>
     </div>
 </div>
 
