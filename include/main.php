@@ -24,36 +24,19 @@
                         <a href="#"><?php echo $category_name; ?></a>
                         <ul class="sitemap__subitem">
 
-                        <?php
-                            $query_sub = "SELECT * FROM sub_category WHERE id = '{$id}'";
+                            <?php
+                            $query_sub = "SELECT * FROM sub_category WHERE sub_id = '{$id}'";
                             $select_sub_category = mysqli_query($connection, $query_sub);
-                            while ($row = mysqli_fetch_assoc($select_sub_category)){
-
+                            while ($row = mysqli_fetch_assoc($select_sub_category)) {
+                                $sub_id = $row['id'];
+                                $sub_name = $row['name'];
+                            ?>
+                                <li>
+                                    <a title="<?php echo $sub_name; ?>" href="./content/sub_page.php?sub_id=<?php echo $sub_id; ?>"><?php echo $sub_name; ?></a>
+                                </li>
+                            <?php
                             }
-                        ?>
-
-                            <li>
-                                <a title="Şirkət haqqında" href="https://www.roimedpharma.az/az/pages/about-company">Şirkət haqqında</a>
-                            </li>
-
-
-
-
-                            <li>
-                                <a title="Fəaliyyətimiz" href="https://www.roimedpharma.az/az/pages/activities">Fəaliyyətimiz</a>
-                            </li>
-                            <li>
-                                <a title="Hədəf - Missiya - Gələcəyə baxışımız" href="https://www.roimedpharma.az/az/pages/targets-mission-our-vision">Hədəf - Missiya - Gələcəyə baxışımız</a>
-                            </li>
-                            <li>
-                                <a title="Hədəf - Missiya - Gələcəyə baxışımız" href="https://www.roimedpharma.az/az/pages/targets-mission-our-vision">Hədəf - Missiya - Gələcəyə baxışımız</a>
-                            </li>
-                            <li>
-                                <a title="Hədəf - Missiya - Gələcəyə baxışımız" href="https://www.roimedpharma.az/az/pages/targets-mission-our-vision">Hədəf - Missiya - Gələcəyə baxışımız</a>
-                            </li>
-                            <li>
-                                <a title="Hədəf - Missiya - Gələcəyə baxışımız" href="https://www.roimedpharma.az/az/pages/targets-mission-our-vision">Hədəf - Missiya - Gələcəyə baxışımız</a>
-                            </li>
+                            ?>
                         </ul>
                     </div>
 
