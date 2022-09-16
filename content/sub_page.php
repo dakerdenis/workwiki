@@ -33,9 +33,13 @@ if (isset($_GET['sub_id'])) {
         <div class="sub_page_container">
             <!------------>
             <div class="sub_page_desc">
+                <!--назад к списку статей-->
+                <div class="sub_page_desc_back">
+                    <a href="../index.php"> <span>&#8678;</span> <p>Назад к списку статей</p></a>
+                </div>
                 <!--название статьи--->
                 <div class="sub_page_desc-name">
-                    <?php echo $sub_name; ?>
+                    <a href="../index.php">Главная</a><span>&#8250;</span><p><?php echo $sub_name; ?></p>
                 </div>
                 <!---номер статьи в БД------>
                 <div class="sub_page_desc-number">
