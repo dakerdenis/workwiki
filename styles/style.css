@@ -338,3 +338,35 @@ ul {
   width: 100%;
   object-fit: contain;
 }
+/********Добавление категорий***********/
+/********Добавление категорий***********/
+/********Добавление категорий***********/
+
+
+.add__category__wrapper{
+  padding-top: 20px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.add__category__block {
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.add_category__desc {
+  font-size: 24px;
+  color: #0c1c35;
+}
+.add_category__form {
+  padding-top: 20px;
+}
+.add_category_form_block {
+  display: flex;
+  justify-content: space-between;
+}
+.add_category_form_block p {
+  font-size: 18px;
+}

@@ -24,7 +24,8 @@ session_start();
 
 include './include/main.php' ;
     ?>
-
+<a style="color: red; font-size: 15px;" href="./settings/add_subcategory.php">Добавить подкатегорию</a>
+<a style="color: red; font-size: 15px;" href="./settings/add_category.php">Добавить категорию</a>
 
 
     <?php include './include/footer.php'; ?>
