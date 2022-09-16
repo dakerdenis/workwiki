@@ -1,6 +1,7 @@
 <?php
 include '../include/header.php';
 include '../include/navigation.php';
+include '../db/connection.php';
 ?>
 <style>
     <?php
@@ -45,7 +46,12 @@ if (isset($_GET['sub_id'])) {
 
             <div class="sub_page_content">
                 <div class="sub_page_text">
-
+                    <p><?php echo $sub_content; ?></p>
+                </div>
+                <div class="sub_page_image">
+                    <a target="blank" href="../styles/imgs/<?php echo $image; ?>">
+                        <img src="../styles/imgs/<?php echo $image; ?>" alt="<?php echo $image; ?>">
+                    </a>
                 </div>
             </div>
         </div>
@@ -54,6 +60,6 @@ if (isset($_GET['sub_id'])) {
 
 <?php
     include '../include/footer.php';
-} else{
+} else {
     header("Location: ../index.php");
 } ?>

@@ -32,7 +32,7 @@
                                 $sub_name = $row['name'];
                             ?>
                                 <li>
-                                    <a title="<?php echo $sub_name; ?>" href="./content/sub_page.php?sub_id=<?php echo $sub_id; ?>"><?php echo $sub_name; ?></a>
+                                    <a title="<?php echo $sub_name; ?>" href="./content/sub_page.php?sub_id=<?php echo $sub_id;?>"><?php echo $sub_name; ?></a>
                                 </li>
                             <?php
                             }
