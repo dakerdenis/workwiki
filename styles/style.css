@@ -350,6 +350,11 @@ ul {
   display: flex;
   align-items: center;
 }
+.add__category__container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .add__category__block {
   padding: 20px;
   margin: 0 auto;
@@ -375,4 +380,34 @@ ul {
   background-color: #fff;
   border-radius: 5px;
   padding: 5px;
+  margin-left: 15px;
+}
+.add_category_form_block{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+.add_category_form_block button{
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: #0c1c35;
+  color: #fff;
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 2px solid #0c1c35;
+}
+.add_category_form_block button:hover{
+  background-color: #fff;
+  color: #0c1c35;
+}
+.category__list{
+  margin-top: 15px;
+  background-color: #fff;
+}
+.category__list_desc{
+  font-size: 19px;
+}
+.category__list p {
+  margin-top: 15px;
 }
