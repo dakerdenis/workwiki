@@ -461,6 +461,18 @@ ul {
   background-color: #fff;
   color: #0c1c35;
 }
+#name_error{
+  font-size: 14px;
+  color: red;
+  width:30% ;
+  text-align: right;
+}
+#select_error{
+  font-size: 14px;
+  color: red;
+  width:30% ;
+  text-align: right;
+}
 .hidden{
   display: none;
   visibility: hidden;

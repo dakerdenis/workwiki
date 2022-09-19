@@ -28,7 +28,7 @@ include '../db/connection.php';
 </style>
 
 <div class="add__subcategory__wrapper">
-    <form method="POST" action="../db/add_subcategory.php" class="add_subcategory_form">
+    <form method="POST" action="../db/add_subcategory.php" id="add_subcategory_form" class="add_subcategory_form">
         <div class="add_subcategory_desc">Добавить подкатегорию</div>
         <!-----блок------>
         <div class="add_subcategory_block">
@@ -37,7 +37,7 @@ include '../db/connection.php';
                 <input type="text" id="subcategory_name" name="subcategory_name">
             </div>
         </div>
-        <p id="name_error">Заполните это поле</p>
+        <p class="hidden" id="name_error">Заполните это поле</p>
         <!-----блок------>
         <div class="add_subcategory_block">
             <div class="add_subcategory_block-desc">
@@ -60,36 +60,76 @@ include '../db/connection.php';
                 </select>
             </div>
         </div>
+        <p class="hidden" id="select_error">Заполните это поле</p>
         <!--------->
         <div class="add_subcategory_block_textarea">
+            
             <!-- Create the editor container -->
             <div id="editor">
-
+asdasd
             </div>
         </div>
-        <div class="add_subcategory_block">
-            <button class="add_susb_button">Додбавить подкатегорию</button>
-
-        </div>
+        <input name="about" type="hidden">
     </form>
+    <div class="add_subcategory_block">
+        <button class="add_susb_button">Додбавить подкатегорию</button>
 
-
+    </div>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
-        
-    document.querySelector('.add_susb_button').addEventListener('click', function() {
-        let result = true;
-        let name = document.getElementById('subcategory_name');
-
-        if(!name.value){
-            result = false;
-            document.getElementById('name_error').classList.remove('hidden');
-
-        }else {
-            document.getElementById('name_error').classList.add('hidden');
-        }
-    });
 
 
+
+
+
+        document.querySelector('.add_susb_button').addEventListener('click', function() {
+            let result = true;
+            let name = document.getElementById('subcategory_name');
+
+            if (!name.value) {
+                result = false;
+                document.getElementById('name_error').classList.remove('hidden');
+
+            } else {
+                document.getElementById('name_error').classList.add('hidden');
+            }
+
+
+            let select = document.getElementById('sub_id');
+            if (!select.value) {
+                result = false;
+                document.getElementById('select_error').classList.remove('hidden');
+
+            } else {
+                document.getElementById('select_error').classList.add('hidden');
+            }
+            if (!result) {
+                return false;
+            }
+
+            var editor = new Quill('#editor');
+            return document.getElementById('add_subcategory_form').submit();
+        });
+
+
+
+
+
+        var quill = new Quill('#editor', {
+            modules: {
+                toolbar: [
+                    ['bold', 'italic'],
+                    ['link', 'blockquote', 'code-block', 'image'],
+                    [{
+                        list: 'ordered'
+                    }, {
+                        list: 'bullet'
+                    }]
+                ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'
+        });
     </script>
 
 </div>
