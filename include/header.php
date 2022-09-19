@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="../cleditor/jquery.cleditor.css" />
     <script src="../cleditor/jquery.min.js"></script>
     <script src="../cleditor/jquery.cleditor.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#input").cleditor();
-        });
-    </script>
+
+    
+<!-- Include stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>

@@ -9,12 +9,13 @@
 
     <!---стили основной страницы--->
     <link rel="stylesheet" href="./styles/style.css">
-    <!--плагин текста--->
-    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        bkLib.onDomLoaded(nicEditors.allTextAreas);
-    </script>
 
+
+
+
+
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <?php
 include '../include/navigation.php';
@@ -33,9 +34,10 @@ include '../db/connection.php';
         <div class="add_subcategory_block">
             <div class="add_subcategory_block-desc">Название</div>
             <div class="add_subcategory_block-input">
-                <input type="text" name="subcategory_name">
+                <input type="text" id="subcategory_name" name="subcategory_name">
             </div>
         </div>
+        <p id="name_error">Заполните это поле</p>
         <!-----блок------>
         <div class="add_subcategory_block">
             <div class="add_subcategory_block-desc">
@@ -43,7 +45,7 @@ include '../db/connection.php';
             </div>
             <div class="add_subcategory_block-select">
                 <select name="sub_id" id="sub_id">
-                    <option value="0">выберите родительскую категорию</option>
+                    <option value="">выберите родительскую категорию</option>
                     <?php
                     $query = "SELECT * FROM category";
                     $select_category = mysqli_query($connection, $query);
@@ -60,16 +62,35 @@ include '../db/connection.php';
         </div>
         <!--------->
         <div class="add_subcategory_block_textarea">
-            <textarea id="content" name="content" style="width: 100%;
-    height: 350px;">
-     Заполните описание субкатегории 
+            <!-- Create the editor container -->
+            <div id="editor">
 
-  </textarea>
+            </div>
         </div>
         <div class="add_subcategory_block">
-            <input type="submit" id="submit" name="submit" value="Додбавить подкатегорию">
+            <button class="add_susb_button">Додбавить подкатегорию</button>
+
         </div>
     </form>
+
+
+    <script>
+        
+    document.querySelector('.add_susb_button').addEventListener('click', function() {
+        let result = true;
+        let name = document.getElementById('subcategory_name');
+
+        if(!name.value){
+            result = false;
+            document.getElementById('name_error').classList.remove('hidden');
+
+        }else {
+            document.getElementById('name_error').classList.add('hidden');
+        }
+    });
+
+
+    </script>
 
 </div>
 
