@@ -28,17 +28,19 @@ include '../db/connection.php';
             <div class="add_category__desc">
                 Добавление категорий
             </div>
+            <!----->
             <form action="../db/add_category.php" method="POST" class="add_category__form">
                 <div class="add_category_form_block">
-                    <p>Название подкатегорий</p>
+                    <p>Название категорий</p>
                     <div class="add_category_form_input">
-                        <input type="text">
+                        <input name="category_name" id="category_name" type="text">
                     </div>
                 </div>
                 <div class="add_category_form_block">
-                    <button type="submit">Добавить категорию</button>
+                    <input name="submit" c id="submit" class="add_category_input" type="submit" value="Добавить категорию">
                 </div>
             </form>
+            <!----->
         </div>
 
         <div class="category__list">
@@ -47,16 +49,12 @@ include '../db/connection.php';
 
             $query = "SELECT * FROM category";
             $select_category = mysqli_query($connection, $query);
-
-
-
             while ($row = mysqli_fetch_assoc($select_category)) {
                 $id = $row['id'];
                 $category_name = $row['category_name'];
-
             ?>
                 <p>
-                    <?php echo $category_name; ?>
+                    <?php echo $category_name; ?> <a href="../db/delete_category.php?source=<?php echo $id; ?>">удалить</a>
                 </p>
 
             <?php

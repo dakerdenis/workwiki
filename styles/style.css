@@ -85,10 +85,6 @@ body {
 /**********navigation styles*********************/
 /**********navigation styles*********************/
 
-
-
-
-
 /***************main category page*********************/
 .wiki__wrapper {
   width: 85%;
@@ -262,32 +258,27 @@ ul {
   width: 83%;
   margin: 0 auto;
   background-color: #fff;
-
 }
 .sub_page_container {
   margin-top: 15px;
   width: 100%;
 }
 .sub_page_desc {
-  
 }
-.sub_page_desc_back{
+.sub_page_desc_back {
   height: 40px;
 }
-.sub_page_desc_back a{
+.sub_page_desc_back a {
   display: flex;
   flex-direction: row;
   align-items: center;
   text-decoration: none;
   font-size: 25px;
   color: #0c1c35;
-  
 }
-.sub_page_desc_back span{
+.sub_page_desc_back span {
   display: block;
 }
-
-
 
 .sub_page_desc-name {
   display: flex;
@@ -298,7 +289,7 @@ ul {
   text-decoration: none;
   font-size: 17px;
 }
-.sub_page_desc-name a:hover{
+.sub_page_desc-name a:hover {
   color: #47a8e5;
 }
 .sub_page_desc-name span {
@@ -318,7 +309,7 @@ ul {
   justify-content: space-between;
 }
 .sub_page_text {
-  width: 60%;
+  width: 100%;
 }
 .sub_page_text p {
   font-size: 17px;
@@ -342,15 +333,14 @@ ul {
 /********Добавление категорий***********/
 /********Добавление категорий***********/
 
-
-.add__category__wrapper{
+.add__category__wrapper {
   padding-top: 20px;
   width: 80%;
   margin: 0 auto;
   display: flex;
   align-items: center;
 }
-.add__category__container{
+.add__category__container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -375,20 +365,20 @@ ul {
 .add_category_form_block p {
   font-size: 18px;
 }
-.add_category_form_input{
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+.add_category_form_input {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   background-color: #fff;
   border-radius: 5px;
   padding: 5px;
   margin-left: 15px;
 }
-.add_category_form_block{
+.add_category_form_block {
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
-.add_category_form_block button{
+.add_category_input {
   cursor: pointer;
   margin-top: 20px;
   background-color: #0c1c35;
@@ -397,17 +387,77 @@ ul {
   font-size: 17px;
   border: 2px solid #0c1c35;
 }
-.add_category_form_block button:hover{
+.add_category_input:hover {
   background-color: #fff;
   color: #0c1c35;
 }
-.category__list{
+.category__list {
   margin-top: 15px;
   background-color: #fff;
 }
-.category__list_desc{
+.category__list_desc {
   font-size: 19px;
 }
 .category__list p {
   margin-top: 15px;
+}
+/********Субкатегория***********/
+/********Субкатегория***********/
+/********Субкатегория***********/
+/********Субкатегория***********/
+.add__subcategory__wrapper {
+  width: 80%;
+  margin: 0 auto;
+  color: #0c1c35;
+}
+.add_subcategory_form {
+  padding-top: 30px ;
+}
+.add_subcategory_desc {
+  font-size: 20px;
+}
+.add_subcategory_block {
+  display: flex;
+  margin: 10px 0px;
+
+  width: 35%;
+  padding: 10px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+.add_subcategory_block-desc {
+  font-size: 18px;
+}
+.add_subcategory_block-input {
+  padding: 5px;
+  width: 50%;
+  border: 1px solid #0c1c35;
+  border-radius: 2px;
+}
+.add_subcategory_block-input input {
+  width: 100%;
+}
+.add_subcategory_block-select {
+  padding: 5px;
+  width: 50%;
+  border: 1px solid #0c1c35;
+  border-radius: 2px;
+}
+.add_subcategory_block-select  select{
+  width: 100%;
+  height: 100%;
+}
+.add_subcategory_block #submit {
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: #0c1c35;
+  color: #fff;
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 2px solid #0c1c35;
+}
+
+.add_subcategory_block #submit:hover{
+  background-color: #fff;
+  color: #0c1c35;
 }
