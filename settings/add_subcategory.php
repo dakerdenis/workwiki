@@ -16,7 +16,52 @@
 
     <!-- Include stylesheet -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <script src="jquery-3.6.0.min.js"></script>
 </head>
+
+
+<style>
+    #form-container {
+  width: 500px;
+}
+
+.row {
+  margin-top: 15px;
+}
+.row.form-group {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.btn {
+  margin-left: 15px;
+}
+
+.change-link {
+  background-color: #000;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  bottom: 0;
+  color: #fff;
+  opacity: 0.8;
+  padding: 4px;
+  position: absolute;
+  text-align: center;
+  width: 150px;
+}
+.change-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+img {
+  width: 150px;
+}
+
+#editor-container {
+  height: 130px;
+}
+</style>
 <?php
 include '../include/navigation.php';
 include '../db/connection.php';
@@ -28,93 +73,40 @@ include '../db/connection.php';
 </style>
 
 <div class="add__subcategory__wrapper">
-    <form method="POST" action="../db/add_subcategory.php" id="add_subcategory_form" class="add_subcategory_form">
-        <div class="add_subcategory_desc">Добавить подкатегорию</div>
-        <!-----блок------>
-        <div class="add_subcategory_block">
-            <div class="add_subcategory_block-desc">Название</div>
-            <div class="add_subcategory_block-input">
-                <input type="text" id="subcategory_name" name="subcategory_name">
+    <form>
+        <div class="row">
+            <div class="col-xs-4">
+                
+                <a class="change-link" href='#'>Change picture</a>
+            </div>
+            <div class="col-xs-8">
+                <div class="form-group">
+                    <label for="display_name">Display name</label>
+                    <input class="form-control" name="display_name" style="border: 1px red solid" type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" name="location" style="border: 1px red solid" type="text" value="">
+                </div>
             </div>
         </div>
-        <p class="hidden" id="name_error">Заполните это поле</p>
-        <!-----блок------>
-        <div class="add_subcategory_block">
-            <div class="add_subcategory_block-desc">
-                Родительская категория
-            </div>
-            <div class="add_subcategory_block-select">
-                <select name="sub_id" id="sub_id">
-                    <option value="">выберите родительскую категорию</option>
-                    <?php
-                    $query = "SELECT * FROM category";
-                    $select_category = mysqli_query($connection, $query);
-                    while ($row = mysqli_fetch_assoc($select_category)) {
-                        $id = $row['id'];
-                        $category_name = $row['category_name'];
-                    ?>
-                        <option value="<?php echo $id; ?>"><?php echo $category_name; ?></option>
-                    <?php
-                    }
-                    ?>
-                </select>
-            </div>
-        </div>
-        <p class="hidden" id="select_error">Заполните это поле</p>
-        <!--------->
-        <div class="add_subcategory_block_textarea">
-            
-            <!-- Create the editor container -->
+        <div class="row form-group">
+            <label for="about">About me</label>
+            <input name="about" type="hidden">
             <div id="editor">
-asdasd
+                
             </div>
         </div>
-        <input name="about" type="hidden">
+        <div class="row">
+            <button class="btn btn-primary" type="submit">Save Profile</button>
+        </div>
     </form>
     <div class="add_subcategory_block">
-        <button class="add_susb_button">Додбавить подкатегорию</button>
-
+        <button class="add_susb_button" type="submit">Додбавить подкатегорию</button>
+        <input type="submit" value="submit">
     </div>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
-
-
-
-
-
-        document.querySelector('.add_susb_button').addEventListener('click', function() {
-            let result = true;
-            let name = document.getElementById('subcategory_name');
-
-            if (!name.value) {
-                result = false;
-                document.getElementById('name_error').classList.remove('hidden');
-
-            } else {
-                document.getElementById('name_error').classList.add('hidden');
-            }
-
-
-            let select = document.getElementById('sub_id');
-            if (!select.value) {
-                result = false;
-                document.getElementById('select_error').classList.remove('hidden');
-
-            } else {
-                document.getElementById('select_error').classList.add('hidden');
-            }
-            if (!result) {
-                return false;
-            }
-
-            var editor = new Quill('#editor');
-            return document.getElementById('add_subcategory_form').submit();
-        });
-
-
-
-
-
         var quill = new Quill('#editor', {
             modules: {
                 toolbar: [
@@ -130,6 +122,13 @@ asdasd
             placeholder: 'Compose an epic...',
             theme: 'snow'
         });
+
+        var form = document.querySelector('form'); // get form by ID
+form.onsubmit = function() { // onsubmit do this first
+    var name = document.querySelector('input[name=name]'); // set name input var
+    name.value = JSON.stringify(quill.getContents()); // populate name input with quill data
+    return true; // submit form
+}
     </script>
 
 </div>

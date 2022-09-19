@@ -14,9 +14,5 @@ include './connection.php';
 ?>
 
 <script>
-    var json = [
-       " content": "<?php echo $content; ?>"
-    ];
-    console.log('test');
-    console.log(json['content']);
+
 </script>
