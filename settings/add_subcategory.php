@@ -9,20 +9,14 @@
 
     <!---стили основной страницы--->
     <link rel="stylesheet" href="./styles/style.css">
-
-
     <!-- Main Quill library -->
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-
     <!-- Theme included stylesheets -->
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
 
-    <!-- Core build with no theme, formatting, non-essential modules -->
-    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
-    <script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
-    <script src="jquery-3.6.0.min.js"></script>
+
 </head>
 <?php
 include '../include/navigation.php';
@@ -35,7 +29,7 @@ include '../db/connection.php';
 </style>
 
 <div class="add__subcategory__wrapper">
-    <form method="POST" action="../db/add_subcategory.php" id="add_subcategory_form" class="add_subcategory_form">
+    <form method="post" id="add_subcategory_form" action="../db/add_subcategory.php" class="add_subcategory_form" onsubmit="mysubmit()">
         <div class="add_subcategory_desc">Добавить подкатегорию</div>
         <!-----блок------>
         <div class="add_subcategory_block">
@@ -70,27 +64,39 @@ include '../db/connection.php';
         <p class="hidden" id="select_error">Заполните это поле</p>
         <!--------->
         <div class="add_subcategory_block_textarea">
-            <input id="editor_input" name="about" type="hidden">
 
-            <!-- Create the editor container -->
-            <textarea style="display: block; width:100%;" id="editor">
-                    
-            </textarea>
+            <input type="hidden" name="content" id="content">
+            <div id="editor">
+
+            </div>
         </div>
-
+        <div class="add_subcategory_block">
+            <button class="add_susb_button" name="submit" type="submit">Додбавить подкатегорию</button>
+        </div>
     </form>
-    <div class="add_subcategory_block">
-        <button class="add_susb_button" type="submit">Додбавить подкатегорию</button>
 
-    </div>
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
-        var container = document.getElementById('editor');
-        var editor = new Quill(container);
-    </script>
 
 </div>
 
+
+<script>
+    var options = {
+        debug: 'info',
+
+        placeholder: 'Описание публикации',
+        readOnly: false,
+        theme: 'snow'
+    };
+
+    var container = document.getElementById('editor');
+    var editor = new Quill(container, options);
+
+
+    function mysubmit() {
+        var text = document.getElementById('editor').innerHTML;
+        text = document.getElementById('content').value;
+    };
+</script>
 
 
 

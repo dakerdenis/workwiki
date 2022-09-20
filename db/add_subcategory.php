@@ -3,7 +3,7 @@ include './connection.php';
 
     $subcategory_name = $_POST['subcategory_name'];
     $sub_id = $_POST['sub_id'];
-    $content=$_POST['content'];
+    $content=trim($_POST['content']);
 
   $query = " INSERT INTO `sub_category` ( `id`, `name`, `sub_id`, `content`, `image`);  
   VALUES ('','{$subcategory_name}','{$sub_id}',' ',' ')";
@@ -13,6 +13,3 @@ include './connection.php';
   
 ?>
 
-<script>
-
-</script>
