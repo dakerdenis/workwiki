@@ -71,7 +71,7 @@ include '../db/connection.php';
             </div>
         </div>
         <div class="add_subcategory_block">
-            <button class="add_susb_button" name="submit" type="submit">Додбавить подкатегорию</button>
+            <button class="add_susb_button" >Додбавить подкатегорию</button>
         </div>
     </form>
 
@@ -91,7 +91,16 @@ include '../db/connection.php';
     var container = document.getElementById('editor');
     var editor = new Quill(container, options);
 
+    document.querySelector('.add_susb_button').addEventListener('click', function(){
+        let result = true;
 
+        let name = document.getElementById('subcategory_name');
+
+        if(!result){
+            return false;
+        }
+         return document.getElementById('add_subcategory_form');
+    });
     function mysubmit() {
         var text = document.getElementById('editor').innerHTML;
         text = document.getElementById('content').value;
