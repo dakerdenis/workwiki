@@ -6,11 +6,25 @@
 
 
         <div class="users__content__addnew">
-            добавить нового
+            <a href="#">Добавить нового пользователя </a>
         </div>
 
         <div class="users__listofall">
-            
+            <!---Элемент который есть в списке --->
+            <div class="users__element">
+                <div class="users__element__flex">
+                    <div class="user_id"><?php echo $user_id; ?></div>
+                    <div class="user_username">
+                        <?php echo $username; ?>
+                    </div>
+                    <div class="user_password">
+                        <input type="password" value="<?php echo $user_password; ?>">
+                    </div>
+                    <div class="user_role">
+                        <?php echo $user_role; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
