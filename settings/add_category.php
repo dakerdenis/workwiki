@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Group Wiki</title>
-
-    <!---стили основной страницы--->
-    <link rel="stylesheet" href="./styles/style.css">
-
-
-</head>
 <?php
-include '../include/navigation.php';
-include '../db/connection.php';
+
+include './db/connection.php';
 ?>
 <style>
     <?php
@@ -29,7 +16,7 @@ include '../db/connection.php';
                 Добавление категорий
             </div>
             <!----->
-            <form action="../db/add_category.php" method="POST" class="add_category__form">
+            <form action="./db/add_category.php" method="POST" class="add_category__form">
                 <div class="add_category_form_block">
                     <p>Название категорий</p>
                     <div class="add_category_form_input">
@@ -54,7 +41,7 @@ include '../db/connection.php';
                 $category_name = $row['category_name'];
             ?>
                 <p>
-                    <?php echo $category_name; ?> <a href="../db/delete_category.php?source=<?php echo $id; ?>">удалить</a>
+                    <?php echo $category_name; ?> <a href="./db/delete_category.php?source=<?php echo $id; ?>">удалить</a>
                 </p>
 
             <?php
@@ -69,7 +56,3 @@ include '../db/connection.php';
 
 
 
-
-<?php
-include '../include/footer.php';
-?>

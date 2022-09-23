@@ -9,7 +9,7 @@
 
        echo $delete__element;
 
-       header('Location: ../settings/add_category.php');
+       header('Location: ../index.php?source_page=add_category');
        
 
     }
