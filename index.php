@@ -15,8 +15,8 @@ if (isset($_SESSION['username'])) {
     <?php include './include/navigation.php' ?>
     <?php
     $admin_page = '';
-    if(isset($_GET['source_page'])){
-        $admin_page= $_GET['source_page'];
+    if (isset($_GET['source_page'])) {
+        $admin_page = $_GET['source_page'];
     }
 
 
@@ -24,14 +24,20 @@ if (isset($_SESSION['username'])) {
         case 'add_subcategory':
             include './settings/add_subcategory.php';
             break;
+        case 'add_category':
+            include './settings/add_category.php';
+            break;
+        case 'add_user':
+            include './settings/add_user.php';
+            break;
     };
 
 
     include './include/main.php'; ?>
 
-    <a style="color: red; font-size: 15px;" href="./settings/add_subcategory.php">Добавить подкатегорию</a>
-    <a style="color: red; font-size: 15px;" href="./settings/add_category.php">Добавить категорию</a>
-    <a style="color: red; font-size: 15px;" href="./settings/add_category.php">Пользователи</a>
+    <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
+    <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_category">Добавить категорию</a>
+    <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_user">Пользователи</a>
 
 
     <?php include './include/footer.php'; ?>
