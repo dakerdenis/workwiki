@@ -477,3 +477,7 @@ ul {
   display: none;
   visibility: hidden;
 }
+.msg{
+  font-size: 18px;
+  color: #0c1c35;
+}
