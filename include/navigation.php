@@ -7,7 +7,7 @@
                 <?php $_SESSION['username']; ?>
             </div>
             <div class="navigation__container_logout">
-                <a href="#">Logout</a>
+                <a href="./db/logout_user.php">Logout</a>
             </div>
         </div>
     </div>
