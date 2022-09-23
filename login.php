@@ -43,9 +43,17 @@ session_start();
                 </div>
                 <!----->
                 <div class="login__from_button">
-                    <button type="submit" name="submit">login</button>
+                    <button type="submit" id="submit" name="submit">login</button>
                 </div>
+                <?php
+                if (isset($_SESSION['message_pass'])) {
+                    echo '<p class="msg"> ' . $_SESSION['message_pass'] . ' </p>';
+                }
+                echo "";
+                unset($_SESSION['message_pass']);
+                ?>
             </form>
+
         </div>
     </div>
 </body>

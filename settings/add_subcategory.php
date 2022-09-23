@@ -16,7 +16,7 @@
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
 
-
+    
 </head>
 <?php
 include '../include/navigation.php';
@@ -29,7 +29,7 @@ include '../db/connection.php';
 </style>
 
 <div class="add__subcategory__wrapper">
-    <form method="post" id="add_subcategory_form" action="../db/add_subcategory.php" class="add_subcategory_form" onsubmit="mysubmit()">
+    <form name="add_subcategory_form" method="post" id="add_subcategory_form" action="../db/add_subcategory.php" class="add_subcategory_form" >
         <div class="add_subcategory_desc">Добавить подкатегорию</div>
         <!-----блок------>
         <div class="add_subcategory_block">
@@ -64,7 +64,6 @@ include '../db/connection.php';
         <p class="hidden" id="select_error">Заполните это поле</p>
         <!--------->
         <div class="add_subcategory_block_textarea">
-
             <input type="hidden" name="content" id="content">
             <div id="editor">
 
@@ -74,37 +73,37 @@ include '../db/connection.php';
             <button class="add_susb_button" >Додбавить подкатегорию</button>
         </div>
     </form>
-
-
 </div>
 
 
+
 <script>
-    var options = {
-        debug: 'info',
+    var quill = new Quill('#editor', {
+  modules: {
+    toolbar: [
+      ['bold', 'italic'],
+      ['link', 'blockquote', 'code-block', 'image'],
+      [{ list: 'ordered' }, { list: 'bullet' }]
+    ]
+  },
+  placeholder: 'Compose an epic...',
+  theme: 'snow'
+});
 
-        placeholder: 'Описание публикации',
-        readOnly: false,
-        theme: 'snow'
-    };
+var form = document.querySelector('#add_subcategory_form');
+form.onsubmit = function() {
+  // Populate hidden form on submit     
+  var about = document.querySelector('input[name=content]');
+  let data = JSON.stringify(quill.getContents());
+    about.value = data;
 
-    var container = document.getElementById('editor');
-    var editor = new Quill(container, options);
+  console.log("Submitted", $(form).serialize(), $(form).serializeArray());
+  
+  // No back end to actually submit to!
+  alert('Open the console to see the submit data!')
+  return false;
+};
 
-    document.querySelector('.add_susb_button').addEventListener('click', function(){
-        let result = true;
-
-        let name = document.getElementById('subcategory_name');
-
-        if(!result){
-            return false;
-        }
-         return document.getElementById('add_subcategory_form');
-    });
-    function mysubmit() {
-        var text = document.getElementById('editor').innerHTML;
-        text = document.getElementById('content').value;
-    };
 </script>
 
 

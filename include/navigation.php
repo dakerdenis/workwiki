@@ -4,7 +4,7 @@
         </a>
         <div class="navigation__container__login">
             <div class="navigation__container_username">
-                snasirov
+                <?php $_SESSION['username']; ?>
             </div>
             <div class="navigation__container_logout">
                 <a href="#">Logout</a>
