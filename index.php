@@ -30,10 +30,16 @@ if (isset($_SESSION['username'])) {
         case 'add_user':
             include './settings/add_user.php';
             break;
+        case '';
+            include './include/main.php';
+            break;
+
+        default:
+            include './include/main.php';
+            break;
     };
 
-
-    include './include/main.php'; ?>
+    ?>
 
     <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
     <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_category">Добавить категорию</a>
