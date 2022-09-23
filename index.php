@@ -12,25 +12,26 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <body>
-<?php include './include/navigation.php' ?>
+    <?php include './include/navigation.php' ?>
     <?php
-
-   // if (isset($_SESSION['username'])) {
-   //     include './include/main.php';
-   // } else {
-   //     header("Location: ./login.php");
-   // }
-//
+    $admin_page = '';
+    if(isset($_GET['source_page'])){
+        $admin_page= $_GET['source_page'];
+    }
 
 
+    switch ($admin_page) {
+        case 'add_subcategory':
+            include './settings/add_subcategory.php';
+            break;
+    };
 
 
+    include './include/main.php'; ?>
 
-include './include/main.php' ;
-    ?>
-<a style="color: red; font-size: 15px;" href="./settings/add_subcategory.php">Добавить подкатегорию</a>
-<a style="color: red; font-size: 15px;" href="./settings/add_category.php">Добавить категорию</a>
-<a style="color: red; font-size: 15px;" href="./settings/add_category.php">Пользователи</a>
+    <a style="color: red; font-size: 15px;" href="./settings/add_subcategory.php">Добавить подкатегорию</a>
+    <a style="color: red; font-size: 15px;" href="./settings/add_category.php">Добавить категорию</a>
+    <a style="color: red; font-size: 15px;" href="./settings/add_category.php">Пользователи</a>
 
 
     <?php include './include/footer.php'; ?>
