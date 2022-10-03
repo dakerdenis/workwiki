@@ -481,3 +481,72 @@ ul {
   font-size: 18px;
   color: #0c1c35;
 }
+.users_wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.users__container {
+}
+.users__content_desc {
+  font-size: 20px;
+}
+.user_block{
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.user_block p {
+  width: 30%;
+}
+.users__content__addnew{
+  margin-top: 25px;
+}
+
+
+.form__add_user {
+  margin-top: 25px;
+  padding: 15px;
+  width: 40%;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+}
+.add_user__form_name {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.add_user__form__block {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.add_user__form_desc{
+  width: 30%;
+  font-size: 16px;
+}
+.add_user__form_input {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  width: 60%;
+  padding: 5px;
+}
+.add_user__form_input input{
+  width: 100%;
+}
+.add_user__form_input select {
+  width: 100%;
+}
+.users__content__addnew button {
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: #0c1c35;
+  color: #fff;
+  padding: 5px 20px;
+  font-size: 17px;
+  border: 2px solid #0c1c35;
+  text-decoration: none;
+}
+.users__content__addnew button:hover{
+  background-color: #fff;
+  color: #0c1c35;
+}

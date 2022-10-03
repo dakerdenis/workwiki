@@ -30,6 +30,9 @@ if (isset($_SESSION['username'])) {
         case 'add_user':
             include './settings/add_user.php';
             break;
+            case 'edit_user':
+                include './settings/edit_user.php';
+                break;
         case '';
             include './include/main.php';
             break;
