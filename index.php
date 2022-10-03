@@ -51,13 +51,17 @@ if (isset($_SESSION['username'])) {
                 ';
             } else if($_SESSION['role']=='user'){
                 echo 'Добро пожаловать !';
+            } else if ($_SESSION['role']=='superadmin'){
+                echo '
+                <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
+                <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_category">Добавить категорию</a>
+                <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_user">Пользователи</a>
+                ';
             }
         }
     
     ?>
-    <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
-    <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_category">Добавить категорию</a>
-    <a style="color: red; font-size: 15px;" href="./index.php?source_page=add_user">Пользователи</a>
+    
 
 
     <?php include './include/footer.php'; ?>
