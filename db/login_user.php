@@ -25,6 +25,7 @@ if(isset($_POST['submit'])){
        session_start();
        $_SESSION['username'] = $db_username;
        $_SESSION['login'] = true;
+       $_SESSION['role'] = $row['role'];
        
        header("Location: ../index.php");
        session_write_close(); 

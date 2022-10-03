@@ -550,3 +550,28 @@ ul {
   background-color: #fff;
   color: #0c1c35;
 }
+.edit__user__categories {
+
+  margin-top: 25px;
+}
+.edit__user__categories_name {
+
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom:1px solid rgba(8, 21, 52, 0.2);
+}
+.edit_user__categories__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.category__user__element {
+  width: 30%;
+  margin-top: 15px;
+  font-size: 18px;
+
+  padding: 5px;
+}
+.category__user__element label{
+  width: 100%;
+}

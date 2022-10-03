@@ -5,6 +5,7 @@
         <div class="navigation__container__login">
             <div class="navigation__container_username">
                 <?php echo $_SESSION['username']; ?>
+                <?php echo $_SESSION['role']; ?>
             </div>
             <div class="navigation__container_logout">
                 <a href="./db/logout_user.php">Logout</a>
