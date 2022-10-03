@@ -23,6 +23,9 @@
                     <div class="user_role">
                         <?php echo $user_role; ?>
                     </div>
+                    <div class="user__previlegies">
+                        <a href="./db/add_user.php?user_id=<?php echo $user_id; ?>">Доступ к статьям</a>
+                    </div>
                 </div>
             </div>
         </div>
