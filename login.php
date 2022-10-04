@@ -23,11 +23,12 @@ session_start();
 <body>
     <div class="login__wrapper">
         <div class="login__container">
-            <div class="login__logotype">
-                <img src="./styles/imgs/logo_red.png" alt="">
-            </div>
+
             <form class="login__content_wrapper" method="post" action="./db/login_user.php">
-                <!----->
+            <div class="login__logotype">
+                <img src="./styles/imgs/logo.svg" alt="">
+            </div>
+            <!----->
                 <div class="login__form__element">
                     <div class="form__element_desc">Login</div>
                     <div class="form__element_input">
@@ -43,7 +44,7 @@ session_start();
                 </div>
                 <!----->
                 <div class="login__from_button">
-                    <button type="submit" id="submit" name="submit">login</button>
+                    <button type="submit" id="submit" name="submit">Войти</button>
                 </div>
                 <?php
                 if (isset($_SESSION['message_pass'])) {
