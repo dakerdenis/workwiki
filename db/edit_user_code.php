@@ -8,15 +8,27 @@ if (isset($_POST['submit'])) {
 
 
 
-
     if (isset($_POST['category'])) {
-        $category = $_POST['category'];
-        $text = 'array(';
+
+        $list_of_categories = [];
+        $category = $_POST['category']; 
+        $text='';
         for ($i = 0; $i < count($category); $i++) {
-            $text .='"' . $category[$i] . '",';
+
+            $category2 = strval($category[$i]);
+
+
+            $category_string =$category2;
+          //  echo $category_string;
+            $text .= $category_string . ',';
+
+          //  echo $text[1];
+            print_r($text);
+
+            echo '<br>';
         }
-        $text .=');';
-        $text = rtrim($text, ',');
+        echo '<br>';
+        echo '<br>';      
 
         $query = "UPDATE `users` SET 
          `username` = '{$username}',
@@ -24,6 +36,11 @@ if (isset($_POST['submit'])) {
           `role` = '{$role}',
           `categories` = '{$text}'
            WHERE `users`.`id` = '{$user_id}';";
+
+         //  for ($i = 0; $i < count($text); $i++){
+         //   echo $text[$i];
+         //  }
+
     } else {
         $query = "UPDATE `users` SET 
         `username` = '{$username}',

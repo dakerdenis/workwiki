@@ -56,14 +56,14 @@ while ($row = mysqli_fetch_assoc($select_user)) {
                 $query = "SELECT * FROM category";
                 $select_category = mysqli_query($connection, $query);
                 while ($row = mysqli_fetch_assoc($select_category)) {
-                    $id = $row['id'];
+                    $category_id = $row['id'];
                     $category_name = $row['category_name'];
                     $category_access = $row['category_access'];
                 ?>
                     <div class="category__user__element">
                         <input type="checkbox" id="<?php echo $id; ?>" 
                         name="category[]" 
-                        value="<?php echo $category_name; ?>">
+                        value="<?php echo $category_id; ?>">
                         <label for="<?php echo $id; ?>"> <?php echo $category_name; ?></label><br>
                     </div>
 
