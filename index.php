@@ -12,7 +12,9 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <body>
+    
     <?php include './include/navigation.php' ?>
+
     <?php
     $admin_page = '';
     if (isset($_GET['source_page'])) {

@@ -2,6 +2,10 @@
     <div class="navigation__container">
         <a href="./index.php" class="navigation__container_logo">
         </a>
+        <div class="administration__block_wrapper">
+
+        </div>
+
         <div class="navigation__container__login">
             <div class="navigation__container_username">
                 <div class="navigation__container__username-p">
