@@ -115,6 +115,26 @@ body {
   color: #fff;
 }
 .navigation__container_logout a{}
+.administration__block_wrapper{
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.administration__block_wrapper a {
+  color: #13243fbd;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #0c1c353a;
+}
+.administration__block_wrapper a:hover {
+  color: #0c1c35;
+  border-bottom: 1px solid #0c1c35;
+}
 
 /**********navigation styles*********************/
 /**********navigation styles*********************/

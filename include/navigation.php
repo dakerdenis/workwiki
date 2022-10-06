@@ -3,9 +3,28 @@
         <a href="./index.php" class="navigation__container_logo">
         </a>
         <div class="administration__block_wrapper">
-
+            <?php 
+                        if(isset($_SESSION['role'])){
+                            if($_SESSION['role']=='admin'){
+                                echo '
+                                <a href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
+                                <a href="./index.php?source_page=add_category">Добавить категорию</a>
+                                ';
+                            } else if($_SESSION['role']=='user'){
+                                echo 'Добро пожаловать !';
+                            } else if ($_SESSION['role']=='superadmin'){
+                                echo '
+                                <a href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
+                                <a href="./index.php?source_page=add_category">Добавить категорию</a>
+                                <a href="./index.php?source_page=add_user">Пользователи</a>
+                                ';
+                            }
+                        }
+            ?>
         </div>
-
+                    <div class="search__navigation_wrapper">
+                        asd
+                    </div>
         <div class="navigation__container__login">
             <div class="navigation__container_username">
                 <div class="navigation__container__username-p">
