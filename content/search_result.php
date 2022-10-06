@@ -33,6 +33,12 @@ $search_text = mysqli_real_escape_string($connection, $search_text);
                 $image = $row['image'];
                 $key_words = $row['key_words'];
 
+                $query_sub_id = "SELECT * FROM `category` WHERE `id` = '{$id}'";
+                $query_sub_id_result = mysqli_query($connection,$query_sub_id);
+                while($row = mysqli_fetch_assoc($query_sub_id_result)){
+                    $sub_id = $row['id'];
+                }
+
         ?>
         
                 <div class="serach__result__element">
