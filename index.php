@@ -12,7 +12,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <body>
-    
+
     <?php include './include/navigation.php' ?>
 
     <?php
@@ -35,6 +35,9 @@ if (isset($_SESSION['username'])) {
         case '';
             include './include/main.php';
             break;
+        case 'sub_page';
+            include './content/sub_page.php';
+            break;
 
         default:
             include './include/main.php';
@@ -46,7 +49,7 @@ if (isset($_SESSION['username'])) {
     <?php
 
 
-    
+
     ?>
 
 

@@ -1,13 +1,3 @@
-<?php
-include '../include/header.php';
-include '../include/navigation.php';
-include '../db/connection.php';
-?>
-<style>
-    <?php
-    include '../styles/style.css';
-    ?>
-</style>
 
 <?php
 
@@ -35,7 +25,7 @@ if (isset($_GET['sub_id'])) {
             <div class="sub_page_desc">
                 <!--назад к списку статей-->
                 <div class="sub_page_desc_back">
-                    <a href="../index.php"> <span>&#8678;</span> <p>Назад к списку статей</p></a>
+                    <a href="./index.php"> <span>&#8678;</span> <p>Назад к списку статей</p></a>
                 </div>
                 <!--название статьи--->
                 <div class="sub_page_desc-name">
@@ -56,9 +46,6 @@ if (isset($_GET['sub_id'])) {
         </div>
     </div>
 
-
 <?php
-    include '../include/footer.php';
-} else {
-    header("Location: ../index.php");
-} ?>
+}
+?>

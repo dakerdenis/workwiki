@@ -116,7 +116,7 @@ body {
 }
 .navigation__container_logout a{}
 .administration__block_wrapper{
-  width: 40%;
+  width: 30%;
   display: flex;
   justify-content: space-evenly;
 
@@ -124,7 +124,7 @@ body {
 .administration__block_wrapper a {
   color: #13243fbd;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
   display: block;
   padding-top: 10px;
@@ -135,7 +135,23 @@ body {
   color: #0c1c35;
   border-bottom: 1px solid #0c1c35;
 }
-
+.search__navigation_wrapper {
+  width: 10%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+}
+.search__navigation_wrapper form {
+  display: flex;
+}
+.search__block__input {
+}
+.search__block__icon {
+}
+.search__block__icon img {
+  width: 15px;
+  height: 15px;
+}
 /**********navigation styles*********************/
 /**********navigation styles*********************/
 /**********navigation styles*********************/
