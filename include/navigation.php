@@ -11,7 +11,7 @@
                                 <a href="./index.php?source_page=add_category">Добавить категорию</a>
                                 ';
                 } else if ($_SESSION['role'] == 'user') {
-                    echo 'Добро пожаловать !';
+                    echo '';
                 } else if ($_SESSION['role'] == 'superadmin') {
                     echo '
                                 <a href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
@@ -22,18 +22,18 @@
             }
             ?>
         </div>
+
         <div class="search__navigation_wrapper">
-            <form action="./db/search.php">
+            <form class="search__block__" action="./db/search.php">
+
                 <div class="search__block__input">
-                    <input type="text" name="search_text" id="search_text" value="Поиск">
+                    <input type="text" name="search_text" id="search_text" placeholder="Поиск">
                 </div>
-                <div class="search__block__icon">
-                    <button type="submit">
-                        <img src="./styles/imgs/search.png" alt="">
-                    </button>
-                </div>
+                <button type="submit"></button>
+
             </form>
         </div>
+
         <div class="navigation__container__login">
             <div class="navigation__container_username">
                 <div class="navigation__container__username-p">

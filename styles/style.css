@@ -135,23 +135,42 @@ body {
   color: #0c1c35;
   border-bottom: 1px solid #0c1c35;
 }
+
+.search__block__inpitinput input {
+  height: 100%;
+}
+
+
 .search__navigation_wrapper {
-  width: 10%;
-  background-color: red;
+  width: 15%;
   display: flex;
   align-items: center;
+
 }
-.search__navigation_wrapper form {
+.search__block__ {
+  border: 1px solid  #0c1c35;
+  border-radius: 5px;
+  padding: 5px;
   display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 .search__block__input {
+  width: 80%;
+  
 }
-.search__block__icon {
+.search__block__input input {
+  height: 28px;
 }
-.search__block__icon img {
-  width: 15px;
-  height: 15px;
+.search__block__ button {
+  width: 30px;
+  height: 30px;
+  background: url(../styles/imgs/search.png) 50% 50% no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
+
 /**********navigation styles*********************/
 /**********navigation styles*********************/
 /**********navigation styles*********************/
