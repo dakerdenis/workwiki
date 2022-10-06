@@ -19,10 +19,12 @@ $search_text = mysqli_real_escape_string($connection, $search_text);
         $result=false;
         $query_search = "SELECT * FROM `sub_category` WHERE `key_words` LIKE '%$search_text%'";
         $search__result = mysqli_query($connection, $query_search);
-        $row = mysqli_fetch_assoc($search__result);
-        if ($row == null) {
+
+        if ($search__result == null) {
             $result = 'К сожалению в нашей базе нет такой информации,повторите попытку уточнив поиск';
-        } else if ($row != null) {
+            echo 'suka';
+        } else if ($search__result != null) {
+            $result ==null;
             while ($row = mysqli_fetch_assoc($search__result)) {
                 $id = $row['id'];
                 $sub_id = $row['id'];
@@ -30,9 +32,9 @@ $search_text = mysqli_real_escape_string($connection, $search_text);
                 $sub_content = $row['content'];
                 $image = $row['image'];
                 $key_words = $row['key_words'];
-        ?>
 
-awdawf
+        ?>
+        
                 <div class="serach__result__element">
                     <div class="serach__result__element_name">
                         <?php echo $sub_name ?>
@@ -45,17 +47,17 @@ awdawf
                             < <?php echo $sub_content; ?> </p>
                     </div>
                     <div class="serach__result__element__readmore">
-                        <a href="#">Подробнее</a>
+                    <a title="<?php echo $sub_name; ?>" href="./index.php?source_page=sub_page&sub_id=<?php echo $sub_id; ?>">Подробнее</a>
                     </div>
                 </div>
 
         <?php  }
-        }
+        } 
 
 
         ?>
         <div class="search__error">
-            <?php if ($result) {
+            <?php if ($result && $row ==null) {
                 echo $result;
             } else if(!$result){
                 return false;
