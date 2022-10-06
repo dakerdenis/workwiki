@@ -35,6 +35,11 @@ if (isset($_SESSION['username'])) {
         case '';
             include './include/main.php';
             break;
+
+        case 'search_result';
+            include './content/search_result.php';
+            break;
+
         case 'sub_page';
             include './content/sub_page.php';
             break;

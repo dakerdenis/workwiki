@@ -15,6 +15,7 @@ if (isset($_GET['sub_id'])) {
         $sub_name = $row['name'];
         $sub_content = $row['content'];
         $image = $row['image'];
+        $key_words = $row['key_words'];
     }
 
 ?>
@@ -34,6 +35,10 @@ if (isset($_GET['sub_id'])) {
                 <!---номер статьи в БД------>
                 <div class="sub_page_desc-number">
                     Номер статьи: <span><?php echo $id; ?></span>
+                </div>
+                <!---ключевые слова-->
+                <div class="sub_page_key_words">
+                    Ключевые слова: <span><?php echo $key_words; ?></span>
                 </div>
             </div>
             <!------------>

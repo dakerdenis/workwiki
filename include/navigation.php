@@ -24,10 +24,10 @@
         </div>
 
         <div class="search__navigation_wrapper">
-            <form class="search__block__" action="./db/search.php">
+            <form method="POST" class="search__block__" action="./index.php?source_page=search_result">
 
                 <div class="search__block__input">
-                    <input type="text" name="search_text" id="search_text" placeholder="Поиск">
+                    <input type="text" name="search_element" id="search_element" placeholder="Поиск">
                 </div>
                 <button type="submit"></button>
 
