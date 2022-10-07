@@ -18,6 +18,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki login</title>
     <link rel="stylesheet" href="./styles/login.css">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -37,11 +39,17 @@ session_start();
                 </div>
                 <!----->
                 <div class="login__form__element">
-                    <div class="form__element_desc">Password</div>
-                    <div class="form__element_input">
-                        <input name="password" id="password" type="password">
+
+                    <div class="pwd">
+                        <div class="overlay"></div>
+                        <div>
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                            <input type="password" name="password" id="password" placeholder="Password...">
+                            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
+
                 <!----->
                 <div class="login__from_button">
                     <button type="submit" id="submit" name="submit">Войти</button>
@@ -56,7 +64,38 @@ session_start();
             </form>
 
         </div>
+
     </div>
+    <script>
+        const input = document.querySelector(".pwd input");
+        const eye = document.querySelector(".pwd .fa-eye-slash");
+        const lock = document.querySelector(".pwd .fa-lock");
+        const overlay = document.querySelector(".pwd .overlay");
+
+        eye.addEventListener("click", ()=> {
+            if(input.type ==="password"){
+                input.type = "text";
+
+                eye.classList.remove("fa-eye-slash");
+                eye.classList.add("fa-eye");
+
+                setTimeout(()=>{
+                    lock.getElementsByClassName.color = "#111625";
+                }, 500);
+            } else {
+                input.type = "password";
+
+                eye.classList.remove("fa-eye");
+                eye.classList.add("fa-eye-slash");
+
+                lock.style.color = "#dbdbdb";
+            }
+
+            overlay.classList.toggle("overlay-cover");
+        });
+    </script>
+
+<script src="https://kit.fontawesome.com/5480a04e88.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
