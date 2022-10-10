@@ -39,14 +39,9 @@ session_start();
                 </div>
                 <!----->
                 <div class="login__form__element">
-
-                    <div class="pwd">
-                        <div class="overlay"></div>
-                        <div>
-                        <i class="fa fa-lock" aria-hidden="true"></i>
-                            <input type="password" name="password" id="password" placeholder="Password...">
-                            <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                        </div>
+                    <div class="form__element_desc">Password</div>
+                    <div class="form__element_input">
+                        <input name="password" id="password" type="password">
                     </div>
                 </div>
 

@@ -1,11 +1,18 @@
 <?php
+
 $search_text =  $_POST['search_element'];
 
 $search_text = mysqli_real_escape_string($connection, $search_text);
+
+
+$user_acces = $_SESSION['username'];
+$user_search_acces = "SELECT * FROM `users` WHERE `username` LIKE '%$user_acces%'";
+$user_search_accesresult = mysqli_query($connection, $user_search_acces)
 ?>
 <div class="search__result_wrapper">
+
     <div class="search__result__name">
-        Результаты поиска
+        Результаты поиска     
     </div>
     <div class="search__result__by">
         <span>поиск по запросу: </span> <?php echo $search_text; ?>
@@ -37,6 +44,7 @@ $search_text = mysqli_real_escape_string($connection, $search_text);
                 $query_sub_id_result = mysqli_query($connection,$query_sub_id);
                 while($row = mysqli_fetch_assoc($query_sub_id_result)){
                     $sub_id = $row['id'];
+                    
                 }
 
         ?>
