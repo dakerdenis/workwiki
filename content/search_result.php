@@ -7,12 +7,18 @@ $search_text = mysqli_real_escape_string($connection, $search_text);
 
 $user_acces = $_SESSION['username'];
 $user_search_acces = "SELECT * FROM `users` WHERE `username` LIKE '%$user_acces%'";
-$user_search_accesresult = mysqli_query($connection, $user_search_acces)
+$user_search_accesresult = mysqli_query($connection, $user_search_acces);
+
+$row = mysqli_fetch_assoc($user_search_accesresult);
+
+    $user_categories = $row['categories'];
+    
+
 ?>
 <div class="search__result_wrapper">
 
     <div class="search__result__name">
-        Результаты поиска     
+        Результаты поиска     <?php echo $user_categories; ?>
     </div>
     <div class="search__result__by">
         <span>поиск по запросу: </span> <?php echo $search_text; ?>
