@@ -43,6 +43,9 @@ if (isset($_SESSION['username'])) {
         case 'sub_page';
             include './content/sub_page.php';
             break;
+        case 'edit_category';
+        include './db/edit_subcategory.php';
+        break;
 
         default:
             include './include/main.php';

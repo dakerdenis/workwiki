@@ -76,7 +76,7 @@
                         <a href="./db/delete_subcategory.php?source=<?php echo $id1; ?>">удалить</a>
                     </div>
                     <div class="subcategory__element__link">
-                        <a href="">Редактировать</a>
+                        <a href="./index.php?source_page=edit_category&sub_cat_id=<?php echo $id1; ?>">Редактировать</a>
                     </div>
 
                 </div>

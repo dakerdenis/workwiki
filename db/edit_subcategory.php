@@ -1,5 +1,84 @@
+<?php
+$sub_id = $_GET['sub_cat_id'];
+?>
 <div class="edit_subcategory__wrapper">
     <div class="edit_subcategory__name">
         Редактирование подкатегорий
     </div>
+    <form class="edit__subcategory__content" method="post" action="./db/edit__sub_cat_code.php">
+        <div class="edit_subcategory_block">
+            <div class="edit__subcategory_desc">
+                Название подкатегорий: 
+            </div>
+            <div class="edit__subcategory__input">
+                <input type="text" value="<?php ?>" name="name" id="name">
+            </div>
+        </div>
+        <div class="edit_subcategory_block">
+            <div class="edit__subcategory_desc">
+                Ключевые слова, через запятую
+            </div>
+            <div class="edit__subcategory__input">
+                <input type="text" value="<?php ?>" name="key_words" id="key_words">
+            </div>
+        </div>
+        <div class="edit_subcategory_block">
+            <div class="edit__subcategory_desc">
+                Родительская категория:
+            </div>
+            <div class="edit__subcategory__input">
+                <select name="sub_id" id="sub_id">
+                    <?php
+                    $query1 = "SELECT * FROM category WHERE id ='{$sub_id}'";
+                    $select_category1 = mysqli_query($connection, $query1);
+                    while ($row1 = mysqli_fetch_assoc($select_category1)) {
+                        $id1 = $row1['id'];
+                        $category_name1 = $row['category_name'];
+                    ?>
+                        <option value="<?php echo $id1; ?>"><?php echo $category_name1; ?></option>
+                    <?php
+                    }
+                    ?>
+
+
+                    <?php
+                    $query = "SELECT * FROM category";
+                    $select_category = mysqli_query($connection, $query);
+                    while ($row = mysqli_fetch_assoc($select_category)) {
+                        $id = $row['id'];
+                        $category_name = $row['category_name'];
+                    ?>
+                        <option value="<?php echo $id; ?>"><?php echo $category_name; ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+                    <input type="hidden" name="sub_id" value="<?php echo $sub_id ?>">
+        <div class="edit_subcategory_block_button">
+            <button>Сохранить</button>
+        </div>
+        
+    </form>
+
+
+    <form class="edit__sub_category__content" action="">
+
+        <div class="edit__subcategory__content_name">
+            Редактирование контента
+        </div>
+        <div class="edit__subcategory__content_desc">
+            Редактирование контента делается отдельно от редактирования других составляющих
+        </div>
+        <div class="add_subcategory_block_textarea">
+            <textarea id="mytextarea" name="content">
+                <?php ?>
+            </textarea>
+        </div>
+
+        <div class="edit__sub__category__button">
+            <button>Сохранить текст</button>
+        </div>
+    </form>
 </div>

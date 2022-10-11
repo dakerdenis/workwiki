@@ -781,3 +781,102 @@ ul {
 .subcategory__element__delete{
   margin-right: 10px;
 }
+
+
+/************edit  Sub category*********************/
+/************edit  Sub category*********************/
+/************edit  Sub category*********************/
+/************edit  Sub category*********************/
+.edit_subcategory__wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+.edit_subcategory__name {
+  margin-top: 25px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.edit__subcategory__content {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  margin-bottom: 15px;
+  width: 50%;
+}
+.edit_subcategory_block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.edit_subcategory_block_button {
+  width: 100%;
+  text-align: center;
+}
+.edit_subcategory_block_button button{
+  color: #fff;
+  background-color: #0c1c35;
+  padding: 5px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  border: 2px solid #0c1c35;
+}
+.edit_subcategory_block_button button:hover{
+  background-color: #fff;
+  color: #0c1c35;
+}
+.edit__subcategory_desc {
+  width: 30%;
+}
+.edit__subcategory__input {
+  width: 65%;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  height: 30px;
+}
+.edit__subcategory__input input {
+  width: 100%;
+  height: 100%;
+}
+.edit_subcategory__block {
+}
+.edit__subcategory_input {
+}
+.edit__subcategory__input select {
+  width: 100%;
+  height: 100%;
+}
+.edit__sub_category__content {
+  margin-top: 40px;
+  border-top:1px solid  rgba(0, 13, 36, 0.062);
+  padding-top: 20px;
+}
+.edit__subcategory__content_name {
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+.edit__subcategory__content_desc{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.add_subcategory_block_textarea {
+}
+.edit__sub__category__button {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+}
+.edit__sub__category__button button{
+  color: #fff;
+  background-color: #0c1c35;
+  padding: 5px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  border: 2px solid #0c1c35;
+}
+.edit__sub__category__button button:hover{
+  background-color: #fff;
+  color: #0c1c35;
+}
