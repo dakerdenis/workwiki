@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $db_username;
         $_SESSION['login'] = true;
         $_SESSION['role'] = $row['role'];
-        $_SESSION['category_access'] = $categories;
+        $_SESSION['category_access'] = $db_access;
 
         header("Location: ../index.php");
         session_write_close();

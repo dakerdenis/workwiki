@@ -10,7 +10,13 @@
     <!---стили основной страницы--->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="../cleditor/jquery.cleditor.css" />
-    <script src="../cleditor/jquery.min.js"></script>
-    <script src="../cleditor/jquery.cleditor.min.js"></script>
 
+    <script src="./node_modules/tinymce/tinymce.js" referrerpolicy="origin"></script>
+    <script src="./node_modules/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+    
 </head>
