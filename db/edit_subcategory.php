@@ -20,7 +20,7 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
                 Название подкатегорий:
             </div>
             <div class="edit__subcategory__input">
-                <input type="text" value="<?php ?>" name="name" id="name">
+                <input type="text" value="<?php echo $subcat_name; ?>" name="name" id="name">
             </div>
         </div>
         <div class="edit_subcategory_block">
@@ -28,7 +28,7 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
                 Ключевые слова, через запятую
             </div>
             <div class="edit__subcategory__input">
-                <input type="text" value="<?php ?>" name="key_words" id="key_words">
+                <input type="text" value="<?php echo $subcat_key_words; ?>" name="key_words" id="key_words">
             </div>
         </div>
         <div class="edit_subcategory_block">
