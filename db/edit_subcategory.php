@@ -1,5 +1,14 @@
 <?php
 $sub_id = $_GET['sub_cat_id'];
+
+$query_all = "SELECT * FROM sub_category WHERE id = '{$sub_id}'";
+$query_all_result = mysqli_query($connection,$query_all);
+while($row4 = mysqli_fetch_assoc($query_all_result)){
+    $subcat_name =  $row4['name']; 
+    $subcat_content =  $row4['content']; 
+    $subcat_key_words =  $row4['key_words']; 
+}
+
 ?>
 <div class="edit_subcategory__wrapper">
     <div class="edit_subcategory__name">
@@ -8,7 +17,7 @@ $sub_id = $_GET['sub_cat_id'];
     <form class="edit__subcategory__content" method="post" action="./db/edit__sub_cat_code.php">
         <div class="edit_subcategory_block">
             <div class="edit__subcategory_desc">
-                Название подкатегорий: 
+                Название подкатегорий:
             </div>
             <div class="edit__subcategory__input">
                 <input type="text" value="<?php ?>" name="name" id="name">
@@ -55,11 +64,11 @@ $sub_id = $_GET['sub_cat_id'];
                 </select>
             </div>
         </div>
-                    <input type="hidden" name="sub_id" value="<?php echo $sub_id ?>">
+        <input type="hidden" name="id" value="<?php echo $sub_id ?>">
         <div class="edit_subcategory_block_button">
-            <button>Сохранить</button>
+            <button type="submit">Сохранить</button>
         </div>
-        
+
     </form>
 
 
@@ -73,7 +82,7 @@ $sub_id = $_GET['sub_cat_id'];
         </div>
         <div class="add_subcategory_block_textarea">
             <textarea id="mytextarea" name="content">
-                <?php ?>
+                <?php echo $subcat_content; ?>
             </textarea>
         </div>
 
