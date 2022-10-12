@@ -1,4 +1,3 @@
-
 <?php
 
 if (isset($_GET['sub_id'])) {
@@ -26,11 +25,14 @@ if (isset($_GET['sub_id'])) {
             <div class="sub_page_desc">
                 <!--назад к списку статей-->
                 <div class="sub_page_desc_back">
-                    <a href="./index.php"> <span>&#8678;</span> <p>Назад к списку статей</p></a>
+                    <a href="./index.php"> <span>&#8678;</span>
+                        <p>Назад к списку статей</p>
+                    </a>
                 </div>
                 <!--название статьи--->
                 <div class="sub_page_desc-name">
-                    <a href="../index.php">Главная</a><span>&#8250;</span><p><?php echo $sub_name; ?></p>
+                    <a href="../index.php">Главная</a><span>&#8250;</span>
+                    <p><?php echo $sub_name; ?></p>
                 </div>
                 <!---номер статьи в БД------>
                 <div class="sub_page_desc-number">
@@ -40,6 +42,7 @@ if (isset($_GET['sub_id'])) {
                 <div class="sub_page_key_words">
                     Ключевые слова: <span><?php echo $key_words; ?></span>
                 </div>
+
             </div>
             <!------------>
 
@@ -48,6 +51,25 @@ if (isset($_GET['sub_id'])) {
                     <?php echo $sub_content; ?>
                 </div>
             </div>
+
+        </div>
+        <!--редактировать статью-->
+        <div class="sub_page__edit_link">
+            <?php
+            if (isset($_SESSION['role'])) {
+                if ($_SESSION['role'] == 'admin') {
+                    echo '
+                                <a href=../index.php?source_page=edit_category&sub_cat_id=' . $id . '">Редактировать публикацию</a>
+                                ';
+                } else if ($_SESSION['role'] == 'user') {
+                    echo '';
+                } else if ($_SESSION['role'] == 'superadmin') {
+                    echo '
+                    <a href="./index.php?source_page=edit_category&sub_cat_id=' . $id . '">Редактировать публикацию</a>
+                                ';
+                }
+            }
+            ?>
         </div>
     </div>
 
