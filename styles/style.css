@@ -435,7 +435,7 @@ ul {
   object-fit: contain;
 }
 .sub_page__edit_link{
-  margin-top: 20px;
+  margin-top: 3em;
 }
 .sub_page__edit_link a {
   cursor: pointer;

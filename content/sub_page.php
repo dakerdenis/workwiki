@@ -45,7 +45,7 @@ if (isset($_GET['sub_id'])) {
 
             </div>
             <!------------>
-
+            <div class="sub_page__image"></div>
             <div class="sub_page_content">
                 <div class="sub_page_text">
                     <?php echo $sub_content; ?>
