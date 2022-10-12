@@ -1,4 +1,5 @@
 <?php
+
 class Content {
   // (A) PROPERTIES
   public $pdo = null; // PDO object
@@ -25,12 +26,12 @@ class Content {
   }
 
   // (D) SAVE CONTENT
-  function save ($id, $content) {
+  function save ($sub_id, $content) {
     try {
       $this->stmt = $this->pdo->prepare(
-        "REPLACE INTO `contents` (`content_id`, `content_text`) VALUES (?,?)"
+        "REPLACE INTO `sub_category` (`content`) VALUES (?)"
       );
-      $this->stmt->execute([$id, $content]);
+      $this->stmt->execute([ $content]);
       return true;
     } catch (Exception $ex) {
       $this->error = $ex->getMessage();
@@ -39,13 +40,13 @@ class Content {
   }
 
   // (E) GET CONTENT
-  function get ($id) {
+  function get ($sub_id) {
     $this->stmt = $this->pdo->prepare(
-      "SELECT `content_text` FROM `contents` WHERE `content_id`=?"
+      "SELECT `content` FROM `sub_category` WHERE `id`=?"
     );
-    $this->stmt->execute([$id]);
+    $this->stmt->execute([$sub_id]);
     $content = $this->stmt->fetch();
-    return is_array($content) ? $content["content_text"] : "" ;
+    return is_array($content) ? $content["content"] : "" ;
   }
 }
 

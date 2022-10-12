@@ -7,15 +7,15 @@
             if (isset($_SESSION['role'])) {
                 if ($_SESSION['role'] == 'admin') {
                     echo '
-                                <a href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
-                                <a href="./index.php?source_page=add_category">Добавить категорию</a>
+                                <a href="./index.php?source_page=add_subcategory">Подкатегории</a>
+                                <a href="./index.php?source_page=add_category">Категории</a>
                                 ';
                 } else if ($_SESSION['role'] == 'user') {
                     echo '';
                 } else if ($_SESSION['role'] == 'superadmin') {
                     echo '
-                                <a href="./index.php?source_page=add_subcategory">Добавить подкатегорию</a>
-                                <a href="./index.php?source_page=add_category">Добавить категорию</a>
+                                <a href="./index.php?source_page=add_subcategory">Подкатегории</a>
+                                <a href="./index.php?source_page=add_category">Категории</a>
                                 <a href="./index.php?source_page=add_user">Пользователи</a>
                                 ';
                 }

@@ -14,7 +14,7 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
     <div class="edit_subcategory__name">
         Редактирование подкатегорий
     </div>
-    <form class="edit__subcategory__content" method="post" action="./db/edit__sub_cat_code.php">
+    <form class="edit__subcategory__content" method="post" action="./db/edit_subcategory_text.php">
         <div class="edit_subcategory_block">
             <div class="edit__subcategory_desc">
                 Название подкатегорий:
@@ -78,7 +78,7 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
     </form>
 
 
-    <form class="edit__sub_category__content" action="">
+    <form class="edit__sub_category__content" method="POST" action="./db/edit_subcategory_text.php">
 
         <div class="edit__subcategory__content_name">
             Редактирование контента
@@ -91,9 +91,23 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
                 <?php echo $subcat_content; ?>
             </textarea>
         </div>
-
+                <input name="sub_id" type="hidden" value="<?php echo $sub_id ?>">
         <div class="edit__sub__category__button">
             <button>Сохранить текст</button>
         </div>
     </form>
 </div>
+<?php
+  // (B) SAVE CONTENT ON FORM SUBMIT
+  if (isset($_POST["content"])) {
+    // (B1) CONNECT TO DATABASE
+    require "./db/2-database.php";
+
+    // (B2) SAVE
+    // NOTE - CONTENT ID FIXED TO 99 FOR THIS DEMO
+    // USE YOUR OWN ID IN YOUR PROJECT!
+    echo $_CONTENT->save($sub_id, $_POST["content"])
+      ? "<div>SAVED</div>"
+      : "<div>{$_CONTENT->error}</div>";
+  }
+  ?>
