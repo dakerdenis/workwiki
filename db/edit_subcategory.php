@@ -68,7 +68,13 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
         <div class="edit_subcategory_block_button">
             <button type="submit">Сохранить</button>
         </div>
-
+        <p>
+            <?php
+                if(isset($_SESSION['edit_sub_cat_succesfull'])){
+                    echo $_SESSION['edit_sub_cat_succesfull'];
+                }
+            ?>
+        </p>
     </form>
 
 

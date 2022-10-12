@@ -102,7 +102,3 @@
 
 
 
-
-<div class="add_subcategory_block_textarea">
-<textarea id="mytextarea" name="content"> </textarea>
-</div>
