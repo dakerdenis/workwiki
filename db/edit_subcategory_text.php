@@ -19,6 +19,7 @@ include './connection.php';
  //   echo $_CONTENT->save($sub_id, $_POST["content"])
   //.    ? "<div>SAVED</div>"
   //    : "<div>{$_CONTENT->error}</div>";
+  header('Location: ../index.php?source_page=edit_category&sub_cat_id='.$sub_id);
   } else {
     echo "eblan";
   }
