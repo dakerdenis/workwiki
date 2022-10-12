@@ -13,7 +13,7 @@ while ($row = mysqli_fetch_assoc($select_user)) {
     $role = $row['role'];
     $categories = $row['categories'];
 ?>
-    <form action="./db/edit_user_code.php" class="form__add_user" method="post" style="width: 80%;">
+    <form action="./db/edit_user_code.php" id="frm1" class="form__add_user" method="post" style="width: 80%;">
         <div class="add_user__form_name">
             Редактирование пользователя
         </div>
@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($select_user)) {
                 <input type="text" name="username" id="username" value="<?php echo $username; ?>">
             </div>
         </div>
-    <input type="hidden" name="user_id" id="user_id" value="<?php echo $user_id; ?>">
+        <input type="hidden" name="user_id" id="user_id" value="<?php echo $user_id; ?>">
         <div class="add_user__form__block">
             <div class="add_user__form_desc">
                 Role:
@@ -61,15 +61,19 @@ while ($row = mysqli_fetch_assoc($select_user)) {
                     $category_access = $row['category_access'];
                 ?>
                     <div class="category__user__element">
-                        <input type="checkbox" id="<?php echo $id; ?>" 
-                        name="category[]" 
-                        value="<?php echo $category_id; ?>">
+                        <input type="checkbox" id="<?php echo $id; ?>" name="category[]" value="<?php echo $category_id; ?>">
                         <label for="<?php echo $id; ?>"> <?php echo $category_name; ?></label><br>
                     </div>
 
                 <?php
                 }
                 ?>
+            </div>
+            <div class="select_all_checkbox">
+                <div class="select_all_block">
+                    <label for="checkall">Выделить всё</label>
+                    <input type='checkbox' name='checkall' onclick='checkedAll(frm1);'>
+                </div>
             </div>
 
         </div>

@@ -14,7 +14,7 @@ $user_list_categories = explode(",", $user_categories);
 ?>
 <div class="search__result_wrapper">
     <div class="search__result__name">
-        Результаты поиска+
+        Результаты поиска
     </div>
     <div class="search__result__by">
         <span>поиск по запросу: </span> <?php echo $search_text; ?>

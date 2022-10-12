@@ -31,7 +31,7 @@ if (isset($_GET['sub_id'])) {
                 </div>
                 <!--название статьи--->
                 <div class="sub_page_desc-name">
-                    <a href="../index.php">Главная</a><span>&#8250;</span>
+                    <a href="./index.php">Главная</a><span>&#8250;</span>
                     <p><?php echo $sub_name; ?></p>
                 </div>
                 <!---номер статьи в БД------>
