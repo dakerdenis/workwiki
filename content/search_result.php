@@ -1,16 +1,13 @@
 <?php
-
+include './db/connection.php';
+/******получение значения********/
 $search_text =  $_POST['search_element'];
-
+$result = '';
+/**************/
 $search_text = mysqli_real_escape_string($connection, $search_text);
-
-$query_search = "SELECT * FROM `sub_category` WHERE `key_words` LIKE '%$search_text%'";
-$search_result = mysqli_query($connection, $query_search);
-
-if ($search_result == '') {
-    $result = 'К сожалению в нашей базе нет такой информации,повторите попытку уточнив поиск';
-}
+echo "test begins";
 ?>
+
 <div class="search__result_wrapper">
     <div class="search__result__name">
         Результаты поиска
@@ -19,28 +16,56 @@ if ($search_result == '') {
         <span>поиск по запросу: </span> <?php echo $search_text; ?>
     </div>
     <div class="search__result__wrapper">
-        &nbsp;
+    <?php
+
+
+echo '<br>';
+/******получение значения********/
+$search_text =  $_POST['search_element'];
+/**************/
+$search_text = mysqli_real_escape_string($connection, $search_text);
+
+$query_search = "SELECT * FROM `sub_category` WHERE `key_words` LIKE '%$search_text%'";
+$search_result = mysqli_query($connection, $query_search);
+$search_result_row = mysqli_fetch_assoc($search_result);
+if($search_result_row == null){
+    $result = 'К сожалению в нашей базе нет такой информации,повторите попытку уточнив поиск';
+    return false;
+    
+} do{
+        $serach_row_id =  $search_result_row['id'];
+        $serach_row_name = $search_result_row['name'];
+        $serach_row_sub_id = $search_result_row['sub_id'];
+        $serach_row_content = $search_result_row['content'];
+        $serach_row_key_words = $search_result_row['key_words'];
+?>
         <div class="serach__result__element">
             <div class="serach__result__element_name">
-                <?php  ?>Название
+                <?php echo $serach_row_name; ?>
             </div>
             <div class="serach__result__element__desc">
-                ключевые слова: <span><?php  ?></span>
+                ключевые слова: <span><?php echo $serach_row_key_words;  ?></span>
             </div>
             <div class="serach__result__element__text">
 
-                <?php  ?> контент
+                <p>
+                    <?php echo $serach_row_content;  ?>
+                </p>
             </div>
             <div class="serach__result__element__readmore">
-                <a title="<?php  ?>" href="./index.php?source_page=sub_page&sub_id=<?php echo $sub_id; ?>">Подробнее</a>
+                <a href="./index.php?source_page=sub_page&sub_id=<?php echo $serach_row_id; ?>">Подробнее</a>
             </div>
         </div>
 
-        <div class="search__error">
-            <?php if(isset($result)){
-                echo $result;
-            }
-            ?>
-        </div>
+<?php
+    }while ($search_result_row = mysqli_fetch_assoc($search_result)) ;
+
+?>
+<div class="search__error">
+    <?php if (isset($result)) {
+        echo $result;
+    }
+    ?>
+</div>
     </div>
 </div>

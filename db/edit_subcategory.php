@@ -14,7 +14,7 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
     <div class="edit_subcategory__name">
         Редактирование подкатегорий
     </div>
-    <form class="edit__subcategory__content" method="post" action="./db/edit_subcategory_text.php">
+    <form class="edit__subcategory__content" method="post" action="./db/edit__sub_cat_code.php">
         <div class="edit_subcategory_block">
             <div class="edit__subcategory_desc">
                 Название подкатегорий:
