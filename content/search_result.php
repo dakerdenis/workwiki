@@ -5,7 +5,6 @@ $search_text =  $_POST['search_element'];
 $result = '';
 /**************/
 $search_text = mysqli_real_escape_string($connection, $search_text);
-echo "test begins";
 ?>
 
 <div class="search__result_wrapper">
@@ -44,7 +43,7 @@ if($search_result_row == null){
                 <?php echo $serach_row_name; ?>
             </div>
             <div class="serach__result__element__desc">
-                ключевые слова: <span><?php echo $serach_row_key_words;  ?></span>
+                ключевые слова: <span><?php echo $serach_row_key_words; ?></span>
             </div>
             <div class="serach__result__element__text">
 
