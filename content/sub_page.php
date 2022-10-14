@@ -63,7 +63,17 @@ if (isset($_GET['sub_id'])) {
                     </div>
                     <!---ключевые слова-->
                     <div class="sub_page_key_words">
-                        Ключевые слова: <span><?php echo $key_words; ?></span>
+
+
+                        Ключевые слова: <?php
+                            $key_words_array = explode("," , $key_words);
+                            foreach($key_words_array as $key){
+                                ?>
+                                    <a href="./index.php?source_page=search_result&search_element=<?php echo $key;?>"><?php echo $key; ?></a>
+                                <?php
+                            }                
+                         ?>
+                        
                     </div>
 
                 </div>

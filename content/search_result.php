@@ -1,7 +1,12 @@
 <?php
 include './db/connection.php';
 /******получение значения********/
-$search_text =  $_POST['search_element'];
+if(isset($_POST['search_element'])){
+    $search_text =  $_POST['search_element'];
+}
+if(isset($_GET['search_element'])){
+    $search_text =  $_GET['search_element'];
+}
 $result = '';
 /**************/
 $search_text = mysqli_real_escape_string($connection, $search_text);
@@ -19,8 +24,6 @@ $search_text = mysqli_real_escape_string($connection, $search_text);
 
 
 echo '<br>';
-/******получение значения********/
-$search_text =  $_POST['search_element'];
 /**************/
 $search_text = mysqli_real_escape_string($connection, $search_text);
 
@@ -47,9 +50,9 @@ if($search_result_row == null){
             </div>
             <div class="serach__result__element__text">
 
-                <p>
+
                     <?php echo $serach_row_content;  ?>
-                </p>
+
             </div>
             <div class="serach__result__element__readmore">
                 <a href="./index.php?source_page=sub_page&sub_id=<?php echo $serach_row_id; ?>">Подробнее</a>

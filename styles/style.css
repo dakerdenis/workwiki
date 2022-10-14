@@ -777,20 +777,11 @@ ul {
 }
 .serach__result__element__desc {
   margin: 10px 0px;
+  
 }
-.serach__result__element__text p {
-  font-size: 15px;
-  line-height: 18px;
-
+.serach__result__element__text  {
+  height: 70px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  line-clamp: 3;
-  box-orient: vertical;
 }
 .serach__result__element__readmore {
   margin-top: 15px;
