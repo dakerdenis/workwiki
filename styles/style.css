@@ -986,3 +986,75 @@ ul {
   background-color: #fff;
   color: #0c1c35;
 }
+/**********add files form*******************/
+/**********add files form*******************/
+/**********add files form*******************/
+/**********add files form*******************/
+.add_files__form {
+  width: 80%;
+  margin: 0 auto;
+}
+.add__files__form__block {
+  margin-top: 20;
+}
+.add_files__name {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.add_files__name  span {
+  font-weight: 600;
+}
+.add_files__form-form{
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  width: 50%;
+  padding: 10px;
+}
+.add__files__form__block__desc {
+  margin-bottom: 15px;
+}
+.add__files__form__block__input {
+  margin-bottom: 15px;
+}
+.add__files__form__block__button  button{
+  color: #fff;
+  background-color: #0c1c35;
+  padding: 5px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  border: 2px solid #0c1c35;
+}
+.add__files__form__block__button  button:hover{
+  background-color: #fff;
+  color: #0c1c35;
+}
+.add_files__downloaded {
+  margin-top: 2em;
+width: 50%;
+}
+.add_files__downloaded_name {
+  font-size: 18px;
+}
+.add_files__downloaded_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.add_files__downloaded_element {
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.element__number_name{
+  display: flex;
+}
+.add_files__downloaded_element_number {
+  margin-right: 4px;
+}
+.add_files__downloaded_element_name {
+  margin-right: 4px;
+}
+.add_files__downloaded_element_delete {
+}
