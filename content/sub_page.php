@@ -83,6 +83,10 @@ if (isset($_GET['sub_id'])) {
                     <div class="sub_page_text">
                         <?php echo $sub_content; ?>
                     </div>
+                    <div class="sub_page_files">
+                        asdasd
+                    </div>
+                
                 </div>
                 
         <!--редактировать статью-->

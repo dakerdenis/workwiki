@@ -464,7 +464,15 @@ ul {
   color: #017dca;
 }
 .sub_page_text {
-  width: 100%;
+  width: 79%;
+}
+.sub_page_files{
+  width: 20%;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 5px;
+  height: 100%;
 }
 .sub_page_text p {
   font-size: 17px;
@@ -1013,7 +1021,7 @@ ul {
 }
 .add_files__go_back span {
   display: block;
-  
+
 }
 .add_files__name  span {
   font-weight: 600;
@@ -1044,7 +1052,7 @@ ul {
 }
 .add_files__downloaded {
   margin-top: 2em;
-width: 50%;
+width: 70%;
 }
 .add_files__downloaded_name {
   font-size: 18px;
@@ -1063,12 +1071,21 @@ width: 50%;
 }
 .element__number_name{
   display: flex;
+  width: 89%;
+  justify-content: space-between;
 }
 .add_files__downloaded_element_number {
-  margin-right: 4px;
+  width: 3%;
 }
 .add_files__downloaded_element_name {
-  margin-right: 4px;
+  width: 27%;
+}
+.add_files__downloaded_element_filetype{
+  width: 50%;
+}
+.add_files__downloaded_element_filesize{
+  width: 10%;
 }
 .add_files__downloaded_element_delete {
+  width: 10%;
 }
