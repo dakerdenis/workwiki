@@ -91,15 +91,26 @@ if (isset($_GET['sub_id'])) {
                         Загружаемые файлы
                     </div>
                     <div class="sub_page_files_wrapper">
+                        <?php
 
-                        <div class="sub_page_files_element">
-                            <div class="sub_page_files_name">
-                                    <?php echo $name; ?>
+                        $query_show_files = "SELECT * FROM `files` WHERE `file_sub_id` = '{$id}'";
+                        $query__files =   mysqli_query($connection, $query_show_files);
+                        while ($row4 = mysqli_fetch_assoc($query__files)) {
+                            $file_name = $row4['name'];
+                        ?>
+                            <div class="sub_page_files_element">
+                                <div class="sub_page_files_name">
+                                    <?php echo $file_name; ?>
+                                </div>
+                                <div class="sub_page_files_download">
+                                    <a href="./files/<?php echo $file_name;  ?>">Скачать</a>
+                                </div>
                             </div>
-                            <div class="sub_page_files_download">
-                                <a href="">Скачать</a>
-                            </div>
-                        </div>
+
+                        <?php
+                        }
+                        ?>
+
 
 
                     </div>

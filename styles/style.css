@@ -864,6 +864,22 @@ ul {
 }
 
 
+.sub_page_files {
+  width: 80%;
+}
+.sub_page_files_name {
+  font-size: 15px;
+}
+.sub_page_files_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sub_page_files_element {
+}
+.sub_page_files_download {
+}
+
 /************edit  Sub category*********************/
 /************edit  Sub category*********************/
 /************edit  Sub category*********************/
