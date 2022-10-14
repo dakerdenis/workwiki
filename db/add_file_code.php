@@ -35,6 +35,8 @@ if (isset($_POST['add_file'])) {
         echo $q;
         $query = mysqli_query($connection, $q);
         move_uploaded_file($post_image_temp, "../files/$file");
+
+        header('Location: ../index.php?source_page=add_files&sub_id=' . $sub_id);
     }
 } else {
     echo 'FAILED';

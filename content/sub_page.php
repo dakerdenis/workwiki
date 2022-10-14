@@ -31,7 +31,7 @@ if (isset($_GET['sub_id'])) {
 
     $username = $_SESSION['username'];
 
-   // echo $user_list;
+    // echo $user_list;
     echo '<br>';
     echo '<br>';
 ?>
@@ -41,7 +41,7 @@ if (isset($_GET['sub_id'])) {
 
         $users = explode(",", $user_list);
         if (in_array($username, $users)) {
-          //  echo "Access Granted";
+            //  echo "Access Granted";
         ?>
             <div class="sub_page_container">
                 <!------------>
@@ -66,14 +66,14 @@ if (isset($_GET['sub_id'])) {
 
 
                         Ключевые слова: <?php
-                            $key_words_array = explode("," , $key_words);
-                            foreach($key_words_array as $key){
-                                ?>
-                                    <a href="./index.php?source_page=search_result&search_element=<?php echo $key;?>"><?php echo $key; ?></a>
-                                <?php
-                            }                
-                         ?>
-                        
+                                        $key_words_array = explode(",", $key_words);
+                                        foreach ($key_words_array as $key) {
+                                        ?>
+                            <a href="./index.php?source_page=search_result&search_element=<?php echo $key; ?>"><?php echo $key; ?></a>
+                        <?php
+                                        }
+                        ?>
+
                     </div>
 
                 </div>
@@ -83,30 +83,47 @@ if (isset($_GET['sub_id'])) {
                     <div class="sub_page_text">
                         <?php echo $sub_content; ?>
                     </div>
-                    <div class="sub_page_files">
-                        asdasd
-                    </div>
-                
+
+
                 </div>
-                
-        <!--редактировать статью-->
-        <div class="sub_page__edit_link">
-            <?php
-            if (isset($_SESSION['role'])) {
-                if ($_SESSION['role'] == 'admin') {
-                    echo '
+                <div class="sub_page_files">
+                    <div class="sub_page_files_name">
+                        Загружаемые файлы
+                    </div>
+                    <div class="sub_page_files_wrapper">
+
+                        <div class="sub_page_files_element">
+                            <div class="sub_page_files_name">
+                                    <?php echo $name; ?>
+                            </div>
+                            <div class="sub_page_files_download">
+                                <a href="">Скачать</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <!--редактировать статью-->
+                <div class="sub_page__edit_link">
+                    <?php
+                    if (isset($_SESSION['role'])) {
+                        if ($_SESSION['role'] == 'admin') {
+                            echo '
                                 <a href=../index.php?source_page=edit_category&sub_cat_id=' . $id . '">Редактировать публикацию</a>
                                 ';
-                } else if ($_SESSION['role'] == 'user') {
-                    echo '';
-                } else if ($_SESSION['role'] == 'superadmin') {
-                    echo '
+                        } else if ($_SESSION['role'] == 'user') {
+                            echo '';
+                        } else if ($_SESSION['role'] == 'superadmin') {
+                            echo '
                     <a href="./index.php?source_page=edit_category&sub_cat_id=' . $id . '">Редактировать публикацию</a>
                                 ';
-                }
-            }
-            ?>
-        </div>
+                        }
+                    }
+                    ?>
+                </div>
 
             </div>
 

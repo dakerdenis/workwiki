@@ -79,7 +79,7 @@ $name = $row['name'];
                             </div>
                         </div>
                         <div class="add_files__downloaded_element_delete">
-                            <a href="">Удалить</a>
+                            <a href="./db/delete_file.php?sub_id=<?php echo $sub_id;?>&file_id=<?php echo $_id; ?>">Удалить</a>
                             
                         </div>
                     </div>
