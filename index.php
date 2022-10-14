@@ -13,9 +13,10 @@ if (isset($_SESSION['username'])) {
 
 <body>
     <div class="main__page__wrapper">
+    <?php include './include/navigation.php' ?>
         <div class="main__page__block__nav_content">
 
-            <?php include './include/navigation.php' ?>
+
 
             <?php
             $admin_page = '';
@@ -68,6 +69,7 @@ if (isset($_SESSION['username'])) {
 
         <?php include './include/footer.php'; ?>
     </div>
+
 </body>
 
 </html>
