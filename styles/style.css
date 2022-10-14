@@ -860,6 +860,29 @@ ul {
 .edit_subcategory__wrapper {
   width: 80%;
   margin: 0 auto;
+  position: relative;
+
+}
+.edit_sub__link {
+  position: absolute;
+
+  height: 50px;
+
+  top: 10%;
+  right: 10%;
+}
+.edit_sub__link a {
+  color: #fff;
+  background-color: #0c1c35;
+  padding: 5px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  border: 2px solid #0c1c35;
+  text-decoration: none;
+}
+.edit_sub__link a:hover {
+  background-color: #fff;
+  color: #0c1c35;
 }
 .edit_subcategory__name {
   margin-top: 25px;

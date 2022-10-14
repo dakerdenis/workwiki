@@ -2,11 +2,11 @@
 $sub_id = $_GET['sub_cat_id'];
 
 $query_all = "SELECT * FROM sub_category WHERE id = '{$sub_id}'";
-$query_all_result = mysqli_query($connection,$query_all);
-while($row4 = mysqli_fetch_assoc($query_all_result)){
-    $subcat_name =  $row4['name']; 
-    $subcat_content =  $row4['content']; 
-    $subcat_key_words =  $row4['key_words']; 
+$query_all_result = mysqli_query($connection, $query_all);
+while ($row4 = mysqli_fetch_assoc($query_all_result)) {
+    $subcat_name =  $row4['name'];
+    $subcat_content =  $row4['content'];
+    $subcat_key_words =  $row4['key_words'];
 }
 
 ?>
@@ -70,9 +70,9 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
         </div>
         <p>
             <?php
-                if(isset($_SESSION['edit_sub_cat_succesfull'])){
-                    echo $_SESSION['edit_sub_cat_succesfull'];
-                }
+            if (isset($_SESSION['edit_sub_cat_succesfull'])) {
+                echo $_SESSION['edit_sub_cat_succesfull'];
+            }
             ?>
         </p>
     </form>
@@ -91,15 +91,20 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
                 <?php echo $subcat_content; ?>
             </textarea>
         </div>
-                <input name="sub_id" type="hidden" value="<?php echo $sub_id ?>">
+        <input name="sub_id" type="hidden" value="<?php echo $sub_id ?>">
         <div class="edit__sub__category__button">
             <button>Сохранить текст</button>
         </div>
     </form>
+
+    <div class="edit_sub__link">
+        <a href="./index.php?source_page=sub_page&sub_id=<?php echo $sub_id; ?>">Просмотреть публикацию</a>
+    </div>
+
 </div>
 <?php
-  // (B) SAVE CONTENT ON FORM SUBMIT
-  if (isset($_POST["content"])) {
+// (B) SAVE CONTENT ON FORM SUBMIT
+if (isset($_POST["content"])) {
     // (B1) CONNECT TO DATABASE
     require "./db/2-database.php";
 
@@ -107,7 +112,7 @@ while($row4 = mysqli_fetch_assoc($query_all_result)){
     // NOTE - CONTENT ID FIXED TO 99 FOR THIS DEMO
     // USE YOUR OWN ID IN YOUR PROJECT!
     echo $_CONTENT->save($sub_id, $_POST["content"])
-      ? "<div>SAVED</div>"
-      : "<div>{$_CONTENT->error}</div>";
-  }
-  ?>
+        ? "<div>SAVED</div>"
+        : "<div>{$_CONTENT->error}</div>";
+}
+?>

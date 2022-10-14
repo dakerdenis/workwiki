@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="../cleditor/jquery.cleditor.css" />
   <link rel="shortcut icon" href="./styles/imgs/logo_red.png" type="image/x-icon">
-
   <script src="./node_modules/tinymce/tinymce.js" referrerpolicy="origin"></script>
   <script src="./node_modules/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
   <script>
