@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
 
 <body>
     <div class="main__page__wrapper">
-    <?php include './include/navigation.php' ?>
+        <?php include './include/navigation.php' ?>
         <div class="main__page__block__nav_content">
 
 
@@ -45,6 +45,9 @@ if (isset($_SESSION['username'])) {
 
                 case 'sub_page';
                     include './content/sub_page.php';
+                    break;
+                case 'add_files';
+                    include './db/add_file.php';
                     break;
                 case 'edit_category';
                     include './db/edit_subcategory.php';

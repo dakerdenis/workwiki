@@ -64,6 +64,13 @@ while ($row4 = mysqli_fetch_assoc($query_all_result)) {
                 </select>
             </div>
         </div>
+        <div class="edit_subcategory_block">
+            <div class="edit__subcategory_desc">
+                Добавление файлов в категорию: 
+            </div>
+                <a href="./index.php?source_page=add_files&sub_id=<?php echo $sub_id; ?>">Добавить файлы</a>
+
+        </div>
         <input type="hidden" name="id" value="<?php echo $sub_id ?>">
         <div class="edit_subcategory_block_button">
             <button type="submit">Сохранить</button>
@@ -91,6 +98,7 @@ while ($row4 = mysqli_fetch_assoc($query_all_result)) {
                 <?php echo $subcat_content; ?>
             </textarea>
         </div>
+
         <input name="sub_id" type="hidden" value="<?php echo $sub_id ?>">
         <div class="edit__sub__category__button">
             <button>Сохранить текст</button>
@@ -100,6 +108,8 @@ while ($row4 = mysqli_fetch_assoc($query_all_result)) {
     <div class="edit_sub__link">
         <a href="./index.php?source_page=sub_page&sub_id=<?php echo $sub_id; ?>">Просмотреть публикацию</a>
     </div>
+
+
 
 </div>
 <?php

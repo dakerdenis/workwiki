@@ -45,24 +45,24 @@
                         $category_name = $row['category_name'];
                         $category_access = $row['category_access'];
                 ?>
-                                            <div class="sitemap__item">
-                        <a href="#"><?php echo $category_name; ?></a>
-                        <ul class="sitemap__subitem">
-                            <?php
-                            $query_sub = "SELECT * FROM sub_category WHERE sub_id = '{$id}'";
-                            $select_sub_category = mysqli_query($connection, $query_sub);
-                            while ($row = mysqli_fetch_assoc($select_sub_category)) {
-                                $sub_id = $row['id'];
-                                $sub_name = $row['name'];
-                            ?>
-                                <li>
-                                    <a title="<?php echo $sub_name; ?>" href="./index.php?source_page=sub_page&sub_id=<?php echo $sub_id; ?>"><?php echo $sub_name; ?></a>
-                                </li>
-                            <?php
-                            }
-                            ?>
-                        </ul>
-                    </div>
+                        <div class="sitemap__item">
+                            <a href="#"><?php echo $category_name; ?></a>
+                            <ul class="sitemap__subitem">
+                                <?php
+                                $query_sub = "SELECT * FROM sub_category WHERE sub_id = '{$id}'";
+                                $select_sub_category = mysqli_query($connection, $query_sub);
+                                while ($row = mysqli_fetch_assoc($select_sub_category)) {
+                                    $sub_id = $row['id'];
+                                    $sub_name = $row['name'];
+                                ?>
+                                    <li>
+                                        <a title="<?php echo $sub_name; ?>" href="./index.php?source_page=sub_page&sub_id=<?php echo $sub_id; ?>"><?php echo $sub_name; ?></a>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                        </div>
 
 
                 <?php
