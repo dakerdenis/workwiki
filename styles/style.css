@@ -1001,6 +1001,20 @@ ul {
   font-size: 17px;
   margin-bottom: 20px;
 }
+.add_files__go_back{
+  margin-bottom: 10px;
+}
+.add_files__go_back a {
+  
+  color: #017dca;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.add_files__go_back span {
+  display: block;
+  
+}
 .add_files__name  span {
   font-weight: 600;
 }

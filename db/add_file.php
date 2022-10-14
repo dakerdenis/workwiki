@@ -13,6 +13,9 @@
         <div class="add_files__name">
             Добавление файлов в категорию:  <span>"<?php echo $name; ?>"</span>
         </div>
+        <div class="add_files__go_back">
+            <a href="./index.php?source_page=edit_category&sub_cat_id=<?php echo $sub_id; ?>"><span>&#8678;</span><p>Вернуться обратно</p></a>
+        </div>
         <form class="add_files__form-form" action="./db/add_file_code.php" method="post" enctype="multipart/form-data">
             <div class="add__files__form__block">
 
@@ -21,10 +24,10 @@
                 Добавьте файл - максимальный размер 3мб
             </div>
             <div class="add__files__form__block__input">
-                <input type="file">
+                <input name="file" id="file" type="file">
             </div>
             <div class="add__files__form__block__button">
-                <button>Загрузить</button>
+                <input type="submit" value="Загрузить файл" name="add_file">
             </div>
         </form>
 
