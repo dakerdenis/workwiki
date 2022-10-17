@@ -125,7 +125,7 @@ if (isset($_GET['sub_id'])) {
                     if (isset($_SESSION['role'])) {
                         if ($_SESSION['role'] == 'admin') {
                             echo '
-                                <a href=../index.php?source_page=edit_category&sub_cat_id=' . $id . '">Редактировать публикацию</a>
+                                <a href=./index.php?source_page=edit_category&sub_cat_id=' . $id . '">Редактировать публикацию</a>
                                 ';
                         } else if ($_SESSION['role'] == 'user') {
                             echo '';

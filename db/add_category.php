@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
      echo $query;
      $addnew__category = mysqli_query($connection, $query);
 
-     header('Location: ../index.php?source_page=add_category');
+     header('Location: ./index.php?source_page=add_category');
  } else{
     echo 'error';
  }
