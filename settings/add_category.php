@@ -32,22 +32,24 @@ include './db/connection.php';
 
         <div class="category__list">
             <div class="category__list_desc">Список всех имеющихся категорий:</div>
+            <div class="category__list__wrapper">
             <?php
 
-            $query = "SELECT * FROM category";
-            $select_category = mysqli_query($connection, $query);
-            while ($row = mysqli_fetch_assoc($select_category)) {
-                $id = $row['id'];
-                $category_name = $row['category_name'];
-            ?>
-                <p>
-                    <?php echo $category_name; ?> <a href="./db/delete_category.php?source=<?php echo $id; ?>">удалить</a>
-                </p>
+$query = "SELECT * FROM category";
+$select_category = mysqli_query($connection, $query);
+while ($row = mysqli_fetch_assoc($select_category)) {
+    $id = $row['id'];
+    $category_name = $row['category_name'];
+?>
+    <p>
+        <?php echo $category_name; ?> <a href="./db/delete_category.php?source=<?php echo $id; ?>">удалить</a>
+    </p>
 
-            <?php
-            }
-            ?>
+<?php
+}
+?>
 
+            </div>
         </div>
     </div>
 </div>
