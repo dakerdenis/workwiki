@@ -82,7 +82,7 @@ session_start();
 
         </div>
         <div class="created__by_block">
-            Developed by <a href="https://github.com/dakerdenis/workwiki">Denis Akershteyn</a>
+            Developed by <a target="_blank" href="https://github.com/dakerdenis/workwiki">Denis Akershteyn</a>
 
             2022 ©
         </div>

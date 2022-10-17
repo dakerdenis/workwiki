@@ -20,7 +20,7 @@ if (isset($_POST["content"])) {
   //   echo $_CONTENT->save($sub_id, $_POST["content"])
   //.    ? "<div>SAVED</div>"
   //    : "<div>{$_CONTENT->error}</div>";
-  header('Location: ../index.php?source_page=edit_category&sub_cat_id='.$sub_id);
+  header('Location: ../index.php?source_page=add_subcategory');
 } else {
   echo "Error";
 }
