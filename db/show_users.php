@@ -1,29 +1,7 @@
 <div class="users__content_desc">
     Список всех пользователей
 </div>
-<?php
 
-$query = "SELECT * FROM users";
-$select_users = mysqli_query($connection, $query);
-while ($row = mysqli_fetch_assoc($select_users)) {
-    $id = $row['id'];
-    $username = $row['username'];
-    $role = $row['role'];
-?>
-    <div class="user_block">
-        <p><?php echo $username; ?></p>
-        <p><?php echo $role; ?></p>
-        <p>
-            <a href="./db/delete_user.php?source=<?php echo $id ?>">Удалить</a>
-        </p>
-        <p>
-            <a href="./index.php?source_page=add_user&user_id=<?php echo $id; ?>">Редактировать</a>
-        </p>
-    </div>
-
-<?php
-}
-?>
 <form action="./db/add_user.php" class="form__add_user" method="post">
     <div class="add_user__form_name">
         Добавление нового пользователя
@@ -60,3 +38,31 @@ while ($row = mysqli_fetch_assoc($select_users)) {
         <button type="submit" id="submit" name="submit">Добавить нового пользователя </button>
     </div>
 </form>
+<p class="delete__remark">
+    * При удалений пользователя восстановить его будет невозможно !
+</p>
+<div class="users__block">
+    <?php
+
+    $query = "SELECT * FROM users";
+    $select_users = mysqli_query($connection, $query);
+    while ($row = mysqli_fetch_assoc($select_users)) {
+        $id = $row['id'];
+        $username = $row['username'];
+        $role = $row['role'];
+    ?>
+        <div class="user_block">
+            <p><?php echo $username; ?></p>
+            <p><?php echo $role; ?></p>
+            <p>
+                <a class="user_block_delete" href="./db/delete_user.php?source=<?php echo $id ?>">Удалить</a>
+            </p>
+            <p>
+                <a class="user__block__edit" href="./index.php?source_page=add_user&user_id=<?php echo $id; ?>">Редактировать</a>
+            </p>
+        </div>
+
+    <?php
+    }
+    ?>
+</div>

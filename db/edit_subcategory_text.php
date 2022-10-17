@@ -10,7 +10,7 @@ if (isset($_POST["content"])) {
   //   require "./db/2-database.php";
   $query = "UPDATE `sub_category` SET `content` = '{$content}' WHERE `sub_category`.`id` = '{$sub_id}';";
 
-  echo $query;
+
   $query_update = mysqli_query($connection, $query);
 
 
@@ -20,7 +20,7 @@ if (isset($_POST["content"])) {
   //   echo $_CONTENT->save($sub_id, $_POST["content"])
   //.    ? "<div>SAVED</div>"
   //    : "<div>{$_CONTENT->error}</div>";
-  header('Location: ../index.php?source_page=edit_category&sub_cat_id=' . $sub_id);
+  header('Location: ../index.php?source_page=edit_category&sub_cat_id='.$sub_id);
 } else {
   echo "Error";
 }

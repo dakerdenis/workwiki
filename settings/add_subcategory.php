@@ -43,6 +43,9 @@
         <div class="all__subcategories__name">
             Список всех подкатегорий:
         </div>
+        <p class="delete__remark">
+            * При удалений подкатегорий восстановить её будет невозможно !
+        </p>
         <div class="subcategori__wrapper_container">
             <?php
             $query1 = "SELECT * FROM sub_category";
@@ -82,9 +85,11 @@
                 </div>
 
 
+
             <?php
             }
             ?>
         </div>
+
     </div>
 </div>

@@ -1,5 +1,7 @@
 <?php
-$sub_id = $_GET['sub_cat_id'];
+if(isset($_GET['sub_cat_id'])){
+    $sub_id = $_GET['sub_cat_id'];
+}
 
 $query_all = "SELECT * FROM sub_category WHERE id = '{$sub_id}'";
 $query_all_result = mysqli_query($connection, $query_all);
