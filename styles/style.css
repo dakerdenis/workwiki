@@ -580,7 +580,18 @@ ul {
   font-size: 19px;
 }
 .category__list p {
-  margin-top: 15px;
+
+}
+.category__list__wrapper{
+  
+}
+.category__element__list{
+  display: flex;
+  width: 150px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 /********Субкатегория***********/
 /********Субкатегория***********/
