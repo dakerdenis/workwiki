@@ -87,7 +87,7 @@ if (isset($_GET['sub_id'])) {
 
                 </div>
                 <div class="sub_page_files">
-                    <div class="sub_page_files_name">
+                    <div class="sub_page_files_h">
                         Загружаемые файлы
                     </div>
                     <div class="sub_page_files_wrapper">
@@ -100,7 +100,9 @@ if (isset($_GET['sub_id'])) {
                         ?>
                             <div class="sub_page_files_element">
                                 <div class="sub_page_files_name">
+                                    <p>
                                     <?php echo $file_name; ?>
+                                    </p>
                                 </div>
                                 <div class="sub_page_files_download">
                                     <a href="./files/<?php echo $file_name;  ?>">Скачать</a>
