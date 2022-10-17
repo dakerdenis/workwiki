@@ -31,6 +31,9 @@ include './db/connection.php';
 
         <div class="category__list">
             <div class="category__list_desc">Список всех имеющихся категорий:</div>
+            <p class="delete__remark">
+                * При удалений категорий восстановить её будет невозможно !
+            </p>
             <div class="category__list__wrapper">
                 <?php
 
@@ -40,11 +43,11 @@ include './db/connection.php';
                     $id = $row['id'];
                     $category_name = $row['category_name'];
                 ?>
-                <div class="category__element__list">
-                <p><?php echo $category_name; ?></p>
-                    <a href="./db/delete_category.php?source=<?php echo $id; ?>">удалить</a>
-                    
-                </div>
+                    <div class="category__element__list">
+                        <p><?php echo $category_name; ?></p>
+                        <a href="./db/delete_category.php?source=<?php echo $id; ?>">удалить</a>
+
+                    </div>
 
                 <?php
                 }

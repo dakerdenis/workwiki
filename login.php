@@ -8,89 +8,97 @@ session_start();
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki login</title>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="./styles/imgs/logo_red2.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
     <link rel="stylesheet" href="./styles/login.css">
-
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
-
 <body>
-    <div class="login__wrapper">
-        <div class="login__container">
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-logo">
+                    <img src="./styles/imgs/logo.svg" alt="">
+					</span>
 
-            <form class="login__content_wrapper" method="post" action="./db/login_user.php">
-            <div class="login__logotype">
-                <img src="./styles/imgs/logo.svg" alt="">
-            </div>
-            <!----->
-                <div class="login__form__element">
-                    <div class="form__element_desc">Login</div>
-                    <div class="form__element_input">
-                        <input name="username" id="username" type="text">
-                    </div>
-                </div>
-                <!----->
-                <div class="login__form__element">
-                    <div class="form__element_desc">Password</div>
-                    <div class="form__element_input">
-                        <input name="password" id="password" type="password">
-                    </div>
-                </div>
+					<span class="login100-form-title p-b-34 p-t-27">
+						Log in
+					</span>
 
-                <!----->
-                <div class="login__from_button">
-                    <button type="submit" id="submit" name="submit">Войти</button>
-                </div>
-                <?php
-                if (isset($_SESSION['message_pass'])) {
-                    echo '<p class="msg"> ' . $_SESSION['message_pass'] . ' </p>';
-                }
-                echo "";
-                unset($_SESSION['message_pass']);
-                ?>
-            </form>
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
 
-        </div>
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
 
-    </div>
-    <script>
-        const input = document.querySelector(".pwd input");
-        const eye = document.querySelector(".pwd .fa-eye-slash");
-        const lock = document.querySelector(".pwd .fa-lock");
-        const overlay = document.querySelector(".pwd .overlay");
+					<div class="contact100-form-checkbox">
 
-        eye.addEventListener("click", ()=> {
-            if(input.type ==="password"){
-                input.type = "text";
+					</div>
 
-                eye.classList.remove("fa-eye-slash");
-                eye.classList.add("fa-eye");
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
 
-                setTimeout(()=>{
-                    lock.getElementsByClassName.color = "#111625";
-                }, 500);
-            } else {
-                input.type = "password";
+					<div class="text-center p-t-90">
 
-                eye.classList.remove("fa-eye");
-                eye.classList.add("fa-eye-slash");
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
-                lock.style.color = "#dbdbdb";
-            }
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
-            overlay.classList.toggle("overlay-cover");
-        });
-    </script>
-
-<script src="https://kit.fontawesome.com/5480a04e88.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
