@@ -27,7 +27,11 @@ $name = $row['name'];
             </div>
             <input type="hidden" name="sub_id" value="<?php echo $sub_id; ?>">
             <div class="add__files__form__block__input">
-                <input name="file" id="file" type="file">
+                <div class="input-file-container">
+                    <input class="input-file" id="my-file" type="file">
+                    <label tabindex="0" for="my-file" class="input-file-trigger">Выберите файл...</label>
+                </div>
+                <p class="file-return"></p>
                 <p>
                     <?php
                     if (isset($_GET['message'])) {
@@ -79,14 +83,14 @@ $name = $row['name'];
                             </div>
                         </div>
                         <div class="add_files__downloaded_element_delete">
-                            <a href="./db/delete_file.php?sub_id=<?php echo $sub_id;?>&file_id=<?php echo $_id; ?>">Удалить</a>
-                            
+                            <a href="./db/delete_file.php?sub_id=<?php echo $sub_id; ?>&file_id=<?php echo $_id; ?>">Удалить</a>
+
                         </div>
                     </div>
 
 
                 <?php
-                    $number ++;
+                    $number++;
                 }
 
                 ?>
@@ -105,3 +109,23 @@ $name = $row['name'];
 
     </div>
 </div>
+<script>
+    document.querySelector("html").classList.add('js');
+
+    var fileInput = document.querySelector(".input-file"),
+        button = document.querySelector(".input-file-trigger"),
+        the_return = document.querySelector(".file-return");
+
+    button.addEventListener("keydown", function(event) {
+        if (event.keyCode == 13 || event.keyCode == 32) {
+            fileInput.focus();
+        }
+    });
+    button.addEventListener("click", function(event) {
+        fileInput.focus();
+        return false;
+    });
+    fileInput.addEventListener("change", function(event) {
+        the_return.innerHTML = this.value;
+    });
+</script>
