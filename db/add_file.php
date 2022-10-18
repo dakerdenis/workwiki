@@ -28,8 +28,8 @@ $name = $row['name'];
             <input type="hidden" name="sub_id" value="<?php echo $sub_id; ?>">
             <div class="add__files__form__block__input">
                 <div class="input-file-container">
-                    <input class="input-file" id="my-file" type="file">
-                    <label tabindex="0" for="my-file" class="input-file-trigger">Выберите файл...</label>
+                    <input class="input-file" id="file" type="file" name="file">
+                    <label for="file" class="input-file-trigger">Выберите файл...</label>
                 </div>
                 <p class="file-return"></p>
                 <p>
