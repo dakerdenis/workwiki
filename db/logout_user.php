@@ -1,11 +1,8 @@
 <?php
 
-    session_start();
     UNSET( $_SESSION['login']);
     UNSET( $_SESSION['username']);
+    UNSET($_SESSION['message_pass']);
+    $_SESSION['message_pass'] = " ";
     header("Location: ../login.php");
-    session_write_close();
-    ob_flush();
-    exit();
-
 ?>

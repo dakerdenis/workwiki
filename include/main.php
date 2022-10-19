@@ -1,3 +1,8 @@
+<style>
+    <?php
+    include './styles/back.css';
+?>
+</style>
 <div class="wiki__wrapper">
     <div class="wiki_infoblock">
         <div class="wiki__infoblock_test">

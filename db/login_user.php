@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'connection.php';
 
 if (isset($_POST['submit'])) {
@@ -68,9 +68,7 @@ if (isset($_POST['submit'])) {
     } else {
         $_SESSION['message_pass'] = 'Неправильный логин или пароль !';
         header("Location: ../login.php");
-        session_write_close();
-        ob_end_flush();
-        exit();
+
     }
 } else {
     echo 'submit not working';

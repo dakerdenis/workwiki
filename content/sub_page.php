@@ -1,3 +1,8 @@
+<style>
+    <?php
+    include './styles/back.css';
+?>
+</style>
 <?php
 
 if (isset($_GET['sub_id'])) {

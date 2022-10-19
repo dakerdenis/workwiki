@@ -1,6 +1,4 @@
 <?php
-
-ob_start();
 session_start();
 
 
@@ -55,17 +53,22 @@ session_start();
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter username">
-                        <input class="input100" autocomplete="off" type="text" name="username" placeholder="Username" id="username">
+                        <input class="input100" autocomplete="off"  type="text" name="username" placeholder="Username" id="username">
                         <span class="focus-input100" data-placeholder="&#xf207;"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <input class="input100" type="password" autocomplete="off" name="password" placeholder="Password">
                         <span class="focus-input100" data-placeholder="&#xf191;"></span>
                     </div>
 
-                    <div class="contact100-form-checkbox">
-
+                    <div class="contact100-form-checkbox" style="color: #fff;">
+                        <?php
+                            if(isset($_SESSION['message_pass'])){
+                                
+                            }
+                        ?>
+                                
                     </div>
 
                     <div class="container-login100-form-btn">
@@ -73,7 +76,9 @@ session_start();
                             Login
                         </button>
                     </div>
-
+                        <p>
+                        
+                        </p>
                     <div class="text-center p-t-90">
 
                     </div>
