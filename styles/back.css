@@ -88,10 +88,10 @@
   }
   
   .x6{
-  -webkit-animation: floatUp 3s infinite linear;
-  -moz-animation: floatUp 3s infinite linear;
-  -o-animation: floatUp 3s infinite linear;
-  animation: floatUp 3s infinite linear;
+  -webkit-animation: floatUp 2s infinite linear;
+  -moz-animation: floatUp 2s infinite linear;
+  -o-animation: floatUp 2s infinite linear;
+  animation: floatUp 2s infinite linear;
   -webkit-transform: scale(.8);
   -moz-transform: scale(.8);
   -o-transform: scale(.8);
